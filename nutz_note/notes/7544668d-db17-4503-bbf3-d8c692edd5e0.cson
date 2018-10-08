@@ -1,0 +1,16 @@
+createdAt: "2018-10-08T09:01:39.771Z"
+updatedAt: "2018-10-08T09:02:29.424Z"
+type: "SNIPPET_NOTE"
+folder: "be96790ae5c9e05f450a"
+title: ""
+description: ""
+snippets: [
+  {
+    name: ".java"
+    mode: "Java"
+    content: ""
+  }
+]
+tags: []
+isStarred: false
+isTrashed: true

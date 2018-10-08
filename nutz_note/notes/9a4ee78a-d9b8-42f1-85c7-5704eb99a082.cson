@@ -1,0 +1,90 @@
+createdAt: "2018-10-08T11:22:41.638Z"
+updatedAt: "2018-10-08T11:23:39.973Z"
+type: "SNIPPET_NOTE"
+folder: "be96790ae5c9e05f450a"
+title: "nutz"
+description: '''
+  nutz
+  
+'''
+snippets: [
+  {
+    name: ""
+    mode: "text"
+    content: '''
+      nutz学习：
+      1，fetch只能在有主键的时候用，没有主键无法保证其唯一性。只能用query查询
+      2，@Name只是用于字符串做主键
+      3，@Id数值类型做主键(如果设置了这个属性则，在做插入的时候该字段不会传值。可以设置auto=false)
+      4，HTML <a> 标签的 rel 属性
+      	<a> 标签的 rel 属性用于指定当前文档与被链接文档的关系。
+      	用于 <a> 标签的可选属性 rel 和 rev 分别表示源文档与目标文档之间正式的关系和方	向。rel 属性指定从源文档到目标文档的关系，而 rev 属性则指定从目标文档到源文档	的关系。这两种属性可以在 <a> 标签中同时使用。
+      5，Pager 对象有如下几个注意事项：
+      	如果 pager 被传入了 null，则不分页
+      	生成 Pager 对象的时候需要传入 “当前页数” 和 “页大小”
+      	Pager 虽然有 getRecordCount() 和 getPageCount() 方法，但是它不会自动被设值 -- 	因为考虑到效率
+      	通过 Pager.setRecordCount() 可以为 Pager 设置结果集的总数，Pager 会通过
+      	getPageCount() 返回总页数
+      6,@Prev与@Next有点像数据库中trigger的意思？
+      	@Prev 使用变量例子
+      	@Prev(@SQL("SELECT pet_name FROM t_user_pet WHERE
+      	ownm='$ownerName'"))
+      	private String name;
+      	在执行 dao.inert 操作时， Nutz.Dao 会预先执行这段 SQL, 执行之前，变量 			$ownerName 会被对象本身的 ownerName 字段的值替换，如果对象本身的 ownerName 字		段的值恰好是"zzh"，那么执行的 SQL 会变成：
+      	SELECT pet_name FROM m_user_pet WHERE ownm='zzh';
+      	SQL 执行的结果会复制给对象的 name 字段。
+      	使用参数
+      	@Prev(@SQL("SELECT pet_name FROM t_user_pet WHERE
+      	ownm=@ownerName"))
+      	private String name;
+      	在执行 dao.inert 操作时， Nutz.Dao 会预先执行这段 SQL, 执行之前，参数 			@ownerName会被 '?' 替换，并根据这段 SQL 生成 PreparedStatement 对象：
+      	然后，根据对象本身的 ownerName 字段的值，为这个 PreparedStatement 设置参数，	执行
+      	之后，这段 SQL 执行的结果会复制给对象的 name 字段
+      7，Nutz.Dao 支持这些数据库:
+      	public enum DB {
+      		H2, DB2, PSQL, ORACLE, SQLSERVER, MYSQL, OTHER
+      	}
+      8，在 POJO 对象上使用视图
+      	通过 @View， Nutz.Dao 知道了当查询数据时候，应该从哪里获取数据
+      	通过 @Readonly 注解 Nutz.Dao 知道，当修改或者删除数据的时候，那些字段应该忽略//？为啥？删除数据不应该删除的是记录吗？为什么删除数据还要把一些字段给忽略
+      9，动态表名？
+      	当数据量比较大的时候，为了提高数据库操作的效率，尤其是查询的效率，其中一种解决方案就是将数据表拆分。拆分的数据表，结构完全一致，只不过是表的名字，按照某种规律		，而成为一组。
+      	动态表名赋值规则
+      	当传入参数为数字或字符串
+      		所有的动态表名变量将被其替换
+      	当传入参数为 Map
+      		按照动态表名变量的名称在 Map 中查找值，并进行替换
+      		大小写敏感
+      		未找到的变量将被空串替换
+      	当传入参数为 任意Java对象(POJO)
+      		按照动态表名变量名称在对象中查找对应字段的值，并进行替换
+      		大小写敏感
+      		未找到的变量将被空串替换
+      	当传入参数为null
+      		所有变量将被空串替换
+      10，清除
+      	对于一对一映射来说其实清除和删除是等价的操作，对于一对多和多对多映射来说，就又区别了，因为清除只会执行一条 SQL 删除一批，而且删除会逐个调用 dao.delete 来删除对	象
+      11，issue一次性插入一对多关系有啥利弊？有啥需要说要一次插入。
+      	一对多插入顺序，首先插入主对象，以便用新的主键值更新映射对象的映射字段（插入主对象后查找主对象的最大值（为啥是最大值如果是别的类型如何获取最大值），然后把最大
+      	值以外键插入。
+      12，dao使用
+      	dao.exec 可以直接为你提供Connection对象
+      	dao.run
+      13，自定义 SQL
+      	issue1,自字义SQL执行效率相对dao()封装方法如何？有什么风险（SQL注入等）
+      	Sql 的逃逸字符：输入 "@@" 表示一个 '@'；输入 "$$$$" 表示一个 '$'
+      14，事务的关键就是原子的界定
+      	事务最核心的是原子的界定，在 Nutz.Dao中，界定原子的方法出奇的简单，借助匿名类，你可以随时将一段代码用你的原子实现包裹住。而 Trans.exec() 方法接受数目可变的原子		，每个原子都是事务性的。
+      15，正则表达式
+      	issue1:正则表达式的作用，是不是设置了正则表达式的字段做操作，其他的直接忽略。如果是这样再设置别的字段岂不是多此一举。
+      	
+      	
+      	
+      	Nutz_Dao_Book
+      	https://wenku.baidu.com/view/cdbbf1bef121dd36a32d82a5.html?sxts=1523234758216
+    '''
+  }
+]
+tags: []
+isStarred: false
+isTrashed: true

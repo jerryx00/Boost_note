@@ -1,0 +1,64 @@
+createdAt: "2018-10-08T02:55:50.604Z"
+updatedAt: "2018-10-08T11:05:02.356Z"
+type: "SNIPPET_NOTE"
+folder: "be96790ae5c9e05f450a"
+title: "nutz入门"
+description: '''
+   nutz入门
+  
+'''
+snippets: [
+  {
+    name: "hello world"
+    mode: "Plain Text"
+    content: '''
+       ```java
+       /** 
+           * hello! world!
+           * add by hdf when 2017 11:22
+           * @return
+           */
+      //    @At - 入口函数对应的 URL,只有标记了这个注解的函数才被认为是入口函数,例如：
+      //  @At("/my/abc")
+      //    public void someFunc(){
+      //    ```````
+      //    }
+      //  也可以为该函数声明多个 URL
+      //    @At({"/my/abc", "/my/xyz"})
+      //    public void someFunc(){
+      //    ```````
+      //    }*
+          
+      //    @Ok - 成功视图
+      //    声明了入口函数的成功视图，即如果入口函数正常执行，
+      //    将会通过这个视图将函数返回值渲染到 HTTP 响应中。 
+      //    当然，如果你的函数直接返回的就是一个视图对象，
+      //    那么就不会使用成功视图（而是你返回的视图对象）来渲染 HTTP 响应
+          
+      //    @Fail("jsp:nutztest.Hello")
+      //    声明了入口函数的失败视图，即如果入口函数抛出异常，将会通过这个视图将异常渲染到 HTTP 响应中 详细的介绍
+          @At("/hello")
+          @Ok("jsp:nutztest.Hello")
+          @Fail("jsp:nutztest.Hello")
+      
+      ``````
+          
+    '''
+  }
+  {
+    name: "test.java"
+    mode: "Java"
+    content: '''
+      
+        @Fail("jsp:nutztest.Hello")
+      //    声明了入口函数的失败视图，即如果入口函数抛出异常，将会通过这个视图将异常渲染到 HTTP 响应中 详细的介绍
+          @At("/hello")
+          @Ok("jsp:nutztest.Hello")
+          @Fail("jsp:nutztest.Hello")
+          
+    '''
+  }
+]
+tags: []
+isStarred: false
+isTrashed: false

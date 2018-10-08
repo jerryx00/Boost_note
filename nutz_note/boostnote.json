@@ -1,0 +1,20 @@
+{
+  "folders": [
+    {
+      "key": "be96790ae5c9e05f450a",
+      "color": "#E8D252",
+      "name": "spring"
+    },
+    {
+      "key": "ac66ce18d96d43a69467",
+      "color": "#B013A4",
+      "name": "springboot"
+    },
+    {
+      "key": "768f1fa7e7d0becbb587",
+      "color": "#30D5C8",
+      "name": "springcloud"
+    }
+  ],
+  "version": "1.0"
+}

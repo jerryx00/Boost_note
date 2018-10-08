@@ -1,0 +1,114 @@
+createdAt: "2018-10-08T01:15:11.330Z"
+updatedAt: "2018-10-08T11:06:10.792Z"
+type: "MARKDOWN_NOTE"
+folder: "e3733748f06746550093"
+title: "docker入门学习"
+content: '''
+  # docker入门学习
+  
+  
+  1. docker删除
+  docker rmi  imagename 
+  有时image删不掉，可以强制删除：docker  rmi  -f   imagename
+  
+  2. 登录docker 镜像内部
+  
+  ```shell
+  docker exec -it [CONTAINER ID] bash
+  docker exec -it 8377068eefcd bash
+  ```
+  或者直接运行时登录
+  docker run -it ubuntu /bin/bash
+  
+  3. 修改镜像
+  
+  制作自己的Docker镜像主要有如下两种方式：
+  
+  1). 使用docker commit 命令来创建镜像
+  
+  通过docker run命令启动容器
+  修改docker镜像内容
+  docker commit提交修改的镜像
+  docker run新的镜像
+  2). 使用 Dockerfile 来创建镜像
+  
+  使用 docker commit 来扩展一个镜像比较简单，但是不方便在一个团队中分享。我们可以使用 docker build 来创建一个新的镜像。为此，首先需要创建一个 Dockerfile，包含一些如何创建镜像的指令。
+  
+  Dockerfile 基本的语法
+  
+  使用#来注释
+  FROM 指令告诉 Docker 使用哪个镜像作为基础
+  接着是维护者的信息
+  RUN开头的指令会在创建中运行，比如安装一个软件包，在这里使用 apt-get 来安装了一些软件
+  
+  镜像修改，只能对运行中的镜像进行修改，停止中的镜像不需要修改(停止后，就失去对镜像的修改)
+  [root@iZ2ze35fwy8k6vxfre83puZ ~]# docker ps
+  CONTAINER ID        IMAGE                                                  COMMAND                  CREATED             STATUS              PORTS                  NAMES
+  8377068eefcd        registry.cn-hangzhou.aliyuncs.com/lxepoo/apache-php5   "/usr/bin/supervisord"   9 minutes ago       Up 9 minutes        0.0.0.0:8080->80/tcp   tender_albattani
+  [root@iZ2ze35fwy8k6vxfre83puZ ~]# sudo docker commit 8377068eefcd jerryxunj0909/apache-php5
+  sha256:a1555b0c5b75f61b8936706d4bd040e378842928d4b3280c8843e35b972052c8
+  
+  命令中，指定了要提交的修改过的容器的ID、目标镜像仓库、镜像名。commit提交的知识创建容器的镜像与容器的当前状态之间的差异部分，很轻量。
+  默认情况下，在提交时，容器的执行将被暂停，以保证数据的完整性，当然你可以指定选项 p ，来禁止。
+  也可以像git一样，在提交镜像时指定更多信息来描述所做的修改：
+  
+  $ sudo docker commit -m='A new image' --author='Aomine' 614122c0aabb aoct/apach
+  
+  4. 使用docker inspect命令查看新创建的镜像的详细信息：
+  commit 主要用于通过差异性，创建一个新的image
+  Usage: docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]Create a new image from a container's changes
+  
+    -a, --author=""     Author (e.g., "John Hannibal Smith <hannibal@a-team.com>")
+    -m, --message=""    Commit message
+    -p, --pause=true    Pause container during commit
+  当容器中的文件产生变化后，可以提交生成一个新的image，这可以让你debug出你所做的修改，导出发布到其他服务器，这似乎是一种比Dockerfile更好的管理方式。
+  
+  
+  $ sudo docker inspect aoct/apache2
+  
+  
+  5. 为镜像打tag
+  docker tag a653cd3f70bf cheyo/myapp:v2
+  
+  
+  6. MYSQL 镜像运行步骤
+  docker pull docker.io/mariadb 
+  docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=pass -d docker.io/mariadb  
+  
+  如果有自己的配置文件/etc/mysql/conf.d，即可用如下方式运行
+  docker run --name mysql -p 3306:3306 -v $DOCKER_RUNTIME/mysql/data:/var/lib/mysql -v $DOCKER_RUNTIME/mysql/conf:/etc/mysql/conf.d -d docker.io/mariadb  
+  
+  sudo docker exec -it mysql bash
+  后续的启动、停止mysql命令如下，可直接用前面--name定义的mysql来处理
+  docker exec -it mysql bash
+  mysql -uroot -ppass
+  创建数据库 
+  
+  
+  
+  CREATE DATABASE `yfcmf` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+  show databases;
+  
+  docker stop mysql
+  docker start mysql
+  
+  ================
+  docker lamp运行
+  docker run --name lamp -p 8080:80 -p 3306:3306  -d tutum/lamp
+  
+  
+  7. 镜像中安装vim
+  apt-get update
+  apt-get install vim
+  
+  
+  
+  8. MYSQL主从配置
+  参考 http://blog.csdn.net/qq362228416/article/details/48569293
+  
+'''
+tags: [
+  "docker入门"
+]
+isStarred: false
+isTrashed: false
