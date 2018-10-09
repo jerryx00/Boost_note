@@ -1,5 +1,5 @@
 createdAt: "2018-10-08T05:59:58.901Z"
-updatedAt: "2018-10-08T11:07:03.242Z"
+updatedAt: "2018-10-09T03:31:37.836Z"
 type: "MARKDOWN_NOTE"
 folder: "cd156f04a6e7a8ed7fd4"
 title: "NLP简单库介绍"
@@ -8,12 +8,12 @@ content: '''
   
   下面是一些开源的自然语言处理库(NLP)：
   
-  Natural language toolkit (NLTK); 
+  > Natural language toolkit (NLTK); 
   Apache OpenNLP; 
   Stanford NLP suite; 
   Gate NLP library
   
-  其中自然语言工具包(NLTK)是最受欢迎的自然语言处理库(NLP)，它是用Python编写的，而且背后有非常强大的社区支持。
+   其中自然语言工具包(NLTK)是最受欢迎的自然语言处理库(NLP)，它是用Python编写的，而且背后有非常强大的社区支持。
   
   NLTK也很容易上手，实际上，它是最简单的自然语言处理(NLP)库。
   
@@ -22,7 +22,6 @@ content: '''
   安装 NLTK
   
   如果您使用的是Windows/Linux/Mac，您可以使用pip安装NLTK:
-  
   
   
   pip install nltk1
@@ -52,40 +51,43 @@ content: '''
   
   我们将使用urllib模块来抓取web页面:
   
-  
+  ```python
   
   import urllib.request
   
   response = urllib.request.urlopen('http://php.net/')
   html = response.read()
-  print (html)12345
+  print (html)
+  ```
   
   从打印结果中可以看到，结果包含许多需要清理的HTML标签。
   
   然后BeautifulSoup模块来清洗这样的文字:
   
   
-  
+  ```python
   from bs4 import BeautifulSoup
   
   import urllib.request
   response = urllib.request.urlopen('http://php.net/')
   html = response.read()
   soup = BeautifulSoup(html,"html5lib")123456
+  ```
   
   这需要安装html5lib模块
   
   
-  
+  ```python
   text = soup.get_text(strip=True)
   print (text)12
+  ```
   
   现在我们从抓取的网页中得到了一个干净的文本。
   
   下一步，将文本转换为tokens,像这样:
   
   
-  
+  ```python
   from bs4 import BeautifulSoup
   import urllib.request
   
@@ -95,6 +97,7 @@ content: '''
   text = soup.get_text(strip=True)
   tokens = text.split()
   print (tokens)123456789
+  ```
   
   统计词频
   
@@ -103,7 +106,7 @@ content: '''
   可以通过调用NLTK中的FreqDist()方法实现:
   
   
-  
+  ```python
   from bs4 import BeautifulSoup
   import urllib.request
   import nltk
@@ -117,6 +120,7 @@ content: '''
   for key,val in freq.items():
       print (str(key) + ':' + str(val))
   12345678910111213
+  ```
   
   如果搜索输出结果，可以发现最常见的token是PHP。
   
@@ -146,17 +150,17 @@ content: '''
   现在，修改下代码,在绘图之前清除一些无效的token:
   
   
-  
+  ```python
   clean_tokens = list()
   sr = stopwords.words('english')
   for token in tokens:
       if token not in sr:
           clean_tokens.append(token)12345
-  
+  ```
   最终的代码应该是这样的:
   
   
-  
+  ```python
   from bs4 import BeautifulSoup
   import urllib.request
   import nltk
@@ -175,7 +179,7 @@ content: '''
   freq = nltk.FreqDist(clean_tokens)
   for key,val in freq.items():
       print (str(key) + ':' + str(val))123456789101112131415161718
-  
+  ```
   现在再做一次词频统计图，效果会比之前好些，因为剔除了停用词:
   
   
@@ -280,14 +284,13 @@ content: '''
   
   您可以这样获取某个给定单词的定义和示例:
   
-  
-  
+  ```python
   from nltk.corpus import wordnet
   
   syn = wordnet.synsets("pain")
   print(syn[0].definition())
   print(syn[0].examples())12345
-  
+  ```
   输出结果是:
   
   
@@ -298,13 +301,14 @@ content: '''
   WordNet包含了很多定义：
   
   
-  
+  ```python
   from nltk.corpus import wordnet
   
   syn = wordnet.synsets("NLP")
   print(syn[0].definition())
   syn = wordnet.synsets("Python")
   print(syn[0].definition())123456
+  ```
   
   结果如下:
   
@@ -317,7 +321,7 @@ content: '''
   可以像这样使用WordNet来获取同义词:
   
   
-  
+  ```python
   from nltk.corpus import wordnet
   
   synonyms = []
@@ -325,6 +329,7 @@ content: '''
       for lemma in syn.lemmas():
           synonyms.append(lemma.name())
   print(synonyms)1234567
+  ```
   
   输出:
   
@@ -337,7 +342,7 @@ content: '''
   也可以用同样的方法得到反义词：
   
   
-  
+  ```python
   from nltk.corpus import wordnet
   
   antonyms = []
@@ -347,7 +352,7 @@ content: '''
               antonyms.append(l.antonyms()[0].name())
   print(antonyms)
   123456789
-  
+  ```
   输出:
   
   
@@ -363,12 +368,13 @@ content: '''
   有很多种算法可以避免这种情况，最常见的是波特词干算法。NLTK有一个名为PorterStemmer的类，就是这个算法的实现:
   
   
-  
+  ```python
   from nltk.stem import PorterStemmer
   
   stemmer = PorterStemmer()
   print(stemmer.stem('working'))
   print(stemmer.stem('worked'))12345
+  ```
   
   输出结果是:
   
@@ -462,7 +468,7 @@ content: '''
   结果还可以是动词(v)、名词(n)、形容词(a)或副词(r)：
   
   
-  
+  ```python
   from nltk.stem import WordNetLemmatizer
   
   lemmatizer = WordNetLemmatizer()
@@ -471,7 +477,7 @@ content: '''
   print(lemmatizer.lemmatize('playing', pos="a"))
   print(lemmatizer.lemmatize('playing', pos="r"))
   12345678
-  
+  ```
   输出:
   
   
@@ -487,7 +493,7 @@ content: '''
   通过下面例子来观察:
   
   
-  
+  ```python
   from nltk.stem import WordNetLemmatizer
   from nltk.stem import PorterStemmer
   
@@ -507,7 +513,7 @@ content: '''
   print(lemmatizer.lemmatize('lisa'))
   print(lemmatizer.lemmatize('purple'))
   12345678910111213141516171819
-  
+  ```
   输出:
   
   
@@ -538,6 +544,11 @@ content: '''
   在此NLP教程中讨论的所有步骤都只是文本预处理。在以后的文章中，将会使用Python NLTK来实现文本分析。
   
   我已经尽量使文章通俗易懂。希望能对你有所帮助
+  
+  其它
+  ![截图](../images/01.jpg) 
+  ![截图](../images/j01.jpg)
+  
   
   ---------------------
   
