@@ -1,0 +1,20 @@
+createdAt: "2018-10-11T00:32:34.766Z"
+updatedAt: "2018-10-11T00:43:00.333Z"
+type: "MARKDOWN_NOTE"
+folder: "cd156f04a6e7a8ed7fd4"
+title: "NLP名词术语"
+content: '''
+  # NLP名词术语
+  
+  * 最大边缘相关模型（Maximal Marginal Relevance）
+  * TextRank（TR）
+  * PageRank（PR）
+  * 分词(segment)，词性标注(pos)，命名实体识别(ner)，句法分析(parsing
+  * 啊
+  > aa
+  > 
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false
