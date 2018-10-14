@@ -1,0 +1,64 @@
+createdAt: "2018-10-14T12:54:48.378Z"
+updatedAt: "2018-10-14T13:42:53.931Z"
+type: "MARKDOWN_NOTE"
+folder: "00f6276eea4c5c719915"
+title: "CMS相关"
+content: '''
+  # CMS相关
+  1. Silva是一套基于python的CMS（内容管理系统），类似于php168 cms，dede cms,phpcms等,只是所使用的语言不通。它可用来管理多个或者是复杂的Web网站，内容存储在纯 XML 文档中，独立的布局和表现层。主要功能包括版本化管理、多站点管理、可扩展的导入和导出、模板化、支持图片存储和操作等。
+  
+  > Silva CMS 3 是一个主要的版本，使用全新的架构，完全 Ajax 驱动以及一些对用户友好的、响应式的改进，同时提升了性能。> 包含新的内容编辑器，重构了 Sliva 新闻网络，提供高级日历功能等等。
+  
+  > Silva CMS 3展示图
+  > Silva CMS 下载地址：http://www.infrae.com/download
+  
+  其他python版的cms：
+  2. Plone/Zope：，十分强大的一个CMS，当然也是python的cms中最优秀的。被许多人使用。
+  
+  3. Pagoda：Pagoda是宝塔的意思，它是搭建在TurboGears上的CMS，这个CMS我只知道是Python开发的，但是从2007年到现在，一直都是在准备Release阶段，却迟迟不Release，有某个角度来看，它真比Vista的发布更掉人味口。
+  
+  4. PyLucid：架构在Django 下的CMS，我准备安装的Python CMS里面，这个就是其一，它是属于那种直接应用型的CMS，而不是架构，所以，在其官方网站上面的说法，就是只要你有能运用Python程序的服务器，就能安装PyLucid，安装方法就是把PyLucid的所有文件上传到你想安装的目录，然后直接运行安装脚本就行，不用任何Shell，所以，PyLucid是我感觉最简单的一个，也是对我这种非专业与埋牛人士来说，这种东西无非是最好的。
+  
+  5. Skeletonz ：这个我也只是知道有这么一个Python的CMS系统，然后我却到如今还不知道到底是要下载哪一个东西，Skeletonz 如果使用MySql数据库的话，还需要在安装它之前先安装MySQLdb。
+  
+  6.  wagtail
+  
+  
+  7. 其它CMS
+  > Django CMS比较
+  Mezzanine
+  Mezzanine is a powerful, consistent, and flexible content management platform. Built using the Django framework, Mezzanine provides a simple yet highly extensible architecture that encourages diving in and hacking on the code. Mezzanine is BSD licensed and supported by a diverse and active community.
+  
+  In some ways, Mezzanine resembles tools such as WordPress, providing an intuitive interface for managing pages, blog posts, form data, store products, and other types of content. But Mezzanine is also different. Unlike many other platforms that make extensive use of modules or reusable applications, Mezzanine provides most of its functionality by default. This approach yields a more integrated and efficient platform.
+  
+  Django Fiber
+  Django Fiber – a simple, open-source, user-friendly CMS for all your django projects. It complements your project, it doesn’t take it over. It allows you to create simple textual, template based pages, add simple content items in pages and views, and adds simple menus that always work. All this can be maintained by a friendly frontend admin.
+  
+  django CMS
+  Enterprise content management with django
+  
+  Django-Fluent
+  A smooth, flexible CMS to create the designs you like, built on top of the powerful Django framework.
+  
+  Django-Fluent CMS is a Open Source CMS, designed for the following needs:
+  
+  Shape the CMS according to the client’s needs.
+  Make any kind of design editable for end-users.
+  Be easy to use
+  Be easy to code with -Be usable for small up to large sites
+  The CMS is flexible for your own needs. You can install parts of the CMS you like to use, and leave everything else out of your project. The system is designed to perform well (blocks are cached in memcache), models and admin screens can be modified to your needs easily.
+  
+  FeinCMS
+  One of the most advanced Content Management Systems built on Django
+  
+  Wagtail
+  There are plenty of great open source content management systems. We’ve used Drupal very successfully on big sites for clients including high profile campaigning NGOs, fundraising charities, think tanks, universities and public sector organisations. There are also some excellent Django CMSs, including Mezzanine, Fein and Django CMS, with thriving developer communities and impressive case studies.
+  
+  But having built content-managed websites for 14 years we have strong opinions about the editor experience and how a CMS should work and be structured, and we need to manage a more rapid pace of development than we can achieve by contributing to existing projects.
+  
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false
