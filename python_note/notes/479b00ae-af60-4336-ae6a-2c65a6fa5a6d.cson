@@ -1,0 +1,52 @@
+createdAt: "2018-10-14T00:48:51.916Z"
+updatedAt: "2018-10-14T11:21:43.769Z"
+type: "MARKDOWN_NOTE"
+folder: "00f6276eea4c5c719915"
+title: "windows-virtualenvwrapper说明"
+content: '''
+  # windows-virtualenvwrapper说明
+  如果使用virtualenv的话，需要进入相对应的路径，并且linux和windows下的使用有些区别，这样一来就相对麻烦，但是可以通过使用virtualwrapper来简化对虚拟环境的操作。
+  
+  安装命令：
+  
+  pip install virtualenvwrapper-win
+  1
+  然后在环境变量中添加WORKON_HOME，该路径就是之后使用命令时存放生成的虚拟环境的目录。
+  
+  可以通过简单的命令创建虚拟环境：
+  
+  mkvirtualenv py3virtualenv
+  或者
+  mkvirtualenv --python=D:\\OftenSoft\\python\\Python27\\python.exe py27virtualenv
+  mkvirtualenv --python=D:\\OftenSoft\\python\\Python36\\python.exe py36virtualenv
+  mkvirtualenv --python=D:\\OftenSoft\\python\\Python37\\python.exe py37virtualenv
+  就会在刚才的WORKON_HOME所设置的目录下创建指定的虚拟环境并且自动进入，退出的话也是使用deactivate。
+  
+  再次进入的话，就不用向virtualenv那样去寻找路径，直接可以使用命令就可以进入虚拟环境：
+  
+  workon py37virtualenv
+   pip install Django
+  或者
+  pip install Django==2.1.2
+  
+  【注意】如果用到django,每个环境下环境下都要再安装一下。命令如上示。
+  
+  5.开始在虚拟环境中工作（将注销其他已经被激活的虚拟环境）：
+  workon py37virtualenv
+  6.注销当前已经被激活的虚拟环境：
+  deactivate
+  7.删除虚拟环境：
+  rmvirtualenv py2virtualenv 
+  
+  环境切换
+  workon py37virtualenv
+  
+  --------------------- 
+  作者：繁城落叶 
+  来源：CSDN 
+  原文：https:\\\\blog.csdn.net\\leafage_m\\article\\details\\72854559?utm_source=copy 
+  版权声明：本文为博主原创文章，转载请附上博文链接！
+'''
+tags: []
+isStarred: false
+isTrashed: false

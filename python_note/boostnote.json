@@ -1,4 +1,20 @@
 {
-  "folders": [],
+  "folders": [
+    {
+      "key": "00f6276eea4c5c719915",
+      "color": "#E10051",
+      "name": "django"
+    },
+    {
+      "key": "462f63006f49956a9ca0",
+      "color": "#3FD941",
+      "name": "django-cms"
+    },
+    {
+      "key": "545ee5f1fcb7e929627b",
+      "color": "#B013A4",
+      "name": "wagtail-cms"
+    }
+  ],
   "version": "1.0"
 }

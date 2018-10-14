@@ -1,0 +1,32 @@
+createdAt: "2018-10-14T10:38:58.538Z"
+updatedAt: "2018-10-14T10:39:53.878Z"
+type: "MARKDOWN_NOTE"
+folder: "462f63006f49956a9ca0"
+title: "django-cms学习"
+content: '''
+  # django-cms学习
+  [Home - Django REST framework](https://www.django-rest-framework.org/)
+  
+  
+  * Requirements
+  REST framework requires the following:
+  
+  Python (2.7, 3.4, 3.5, 3.6, 3.7)
+  Django (1.11, 2.0, 2.1)
+  The following packages are optional:
+  
+  coreapi (1.32.0+) - Schema generation support.
+  Markdown (2.1.0+) - Markdown support for the browsable API.
+  django-filter (1.0.1+) - Filtering support.
+  django-crispy-forms - Improved HTML display for filtering.
+  django-guardian (1.1.1+) - Object level permissions support.
+  * Installation
+  Install using pip, including any optional packages you want...
+  
+  pip install djangorestframework
+  pip install markdown       # Markdown support for the browsable API.
+  pip install django-filter  # Filtering support
+'''
+tags: []
+isStarred: false
+isTrashed: false
