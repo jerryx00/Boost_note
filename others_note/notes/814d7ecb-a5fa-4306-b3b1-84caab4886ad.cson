@@ -1,11 +1,14 @@
 createdAt: "2018-10-09T08:42:45.874Z"
-updatedAt: "2018-10-10T05:46:13.115Z"
+updatedAt: "2018-10-15T01:03:47.666Z"
 type: "MARKDOWN_NOTE"
 folder: "d2d6983005c94aa457ea"
 title: "PlantUML（程序员绘制流程图专用工具）"
 content: '''
   # PlantUML（程序员绘制流程图专用工具）
   参考[PlantUML（程序员绘制流程图专用工具） - 奋飞的蜗牛 - CSDN博客](https://blog.csdn.net/u010111422/article/details/69568947)
+  
+  专业参考（该文档比较全）
+  [顺序图的语法和功能](http://plantuml.com/sequence-diagram)
   
   什么是 PlantUML
   PlantUML 是一个画图脚本语言，用它可以快速地画出：
