@@ -1,5 +1,5 @@
 createdAt: "2018-10-14T00:48:51.916Z"
-updatedAt: "2018-10-14T11:21:43.769Z"
+updatedAt: "2018-10-15T10:32:27.171Z"
 type: "MARKDOWN_NOTE"
 folder: "00f6276eea4c5c719915"
 title: "windows-virtualenvwrapper说明"
@@ -10,8 +10,8 @@ content: '''
   安装命令：
   
   pip install virtualenvwrapper-win
-  1
-  然后在环境变量中添加WORKON_HOME，该路径就是之后使用命令时存放生成的虚拟环境的目录。
+  
+  然后在环境变量中添加 WORKON_HOME，该路径就是之后使用命令时存放生成的虚拟环境的目录。
   
   可以通过简单的命令创建虚拟环境：
   
