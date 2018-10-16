@@ -1,5 +1,5 @@
 createdAt: "2018-10-14T12:54:48.378Z"
-updatedAt: "2018-10-14T13:42:53.931Z"
+updatedAt: "2018-10-16T01:02:03.562Z"
 type: "MARKDOWN_NOTE"
 folder: "00f6276eea4c5c719915"
 title: "CMS相关"
@@ -54,7 +54,10 @@ content: '''
   Wagtail
   There are plenty of great open source content management systems. We’ve used Drupal very successfully on big sites for clients including high profile campaigning NGOs, fundraising charities, think tanks, universities and public sector organisations. There are also some excellent Django CMSs, including Mezzanine, Fein and Django CMS, with thriving developer communities and impressive case studies.
   
-  But having built content-managed websites for 14 years we have strong opinions about the editor experience and how a CMS should work and be structured, and we need to manage a more rapid pace of development than we can achieve by contributing to existing projects.
+  But having built content-managed websites for 14 years we have strong opinions about the editor experience and how a CMS should work and be structure
+  
+  
+  flask 
   
   
   

@@ -1,5 +1,5 @@
 createdAt: "2018-10-11T00:32:34.521Z"
-updatedAt: "2018-10-15T09:17:35.587Z"
+updatedAt: "2018-10-16T00:19:52.620Z"
 type: "MARKDOWN_NOTE"
 folder: "cd156f04a6e7a8ed7fd4"
 title: "Python自然语言处理实战"
@@ -91,6 +91,21 @@ content: '''
   思考：
   * 了解每种算法的使用场景
   * 每种算法的Python源码
+  
+  ## 第6章 句法分析
+  句法分析很复杂
+  1. 句法分析的常用方法
+  * 基于PCFG的句法分析
+   基于概率的短语结构分析,比较有名的有 Stanford Parser。
+    Stanford Parser用到了python nltk库
+   ``` pip install nltk ```
+    nltk库主要针对英文
+  * 基于最大间隔的马尔可夫网络的句法分析
+  * 基于CRF的句法分析
+  * 基于移进-规约的句法分析模型
+  
+  
+  2. 
 '''
 tags: []
 isStarred: false

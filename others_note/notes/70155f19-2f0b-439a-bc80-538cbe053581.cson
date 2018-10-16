@@ -1,0 +1,55 @@
+createdAt: "2018-10-16T01:11:17.841Z"
+updatedAt: "2018-10-16T01:45:11.625Z"
+type: "MARKDOWN_NOTE"
+folder: "d2d6983005c94aa457ea"
+title: "cms"
+content: '''
+  # cms
+  ## php
+  
+  * tp
+  > 1. fastadmin
+  > 2. ymcmf
+    
+  * yii2
+  > 1. rageframe  
+  [RageFrame应用开发引擎](http://rageframe.com/)
+  
+  
+  * laravel
+  1. xApi Manager[国]
+  
+  * Yaf[国]
+  [Yaf: Yaf 是一个 C 语言编写的 PHP 框架，Yaf 的特点： 用 C 语言开发的 PHP 框架，相比原生的 PHP，几乎不会带来额外的性能开销](https://gitee.com/mirrors/Yaf1)
+  
+  * yii2-swoole
+  yii2 swoole：让yii2运行在swoole上 性能 运行在swoole上的yii2是运行在php-fpm上yii2的5倍以上，而且一句代码也不用修改
+  
+  * phalapi[国]
+  
+  ## python
+  * 1. Flask
+  轻量级Web应用框架
+  * 2.osroom[国]
+  
+  *  3 Bottle: 
+    微型Python Web框架
+  * 3. Sanic 好像很快
+    
+    
+  ## golang
+  * 1 .beego
+  * 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false
