@@ -1,5 +1,5 @@
 createdAt: "2018-10-17T00:02:40.535Z"
-updatedAt: "2018-10-17T00:02:58.930Z"
+updatedAt: "2018-10-17T00:48:06.620Z"
 type: "MARKDOWN_NOTE"
 folder: "d2d6983005c94aa457ea"
 title: "git生成ssh key和多账号支持"
@@ -9,10 +9,10 @@ content: '''
   git配置ssh
   
   1.首先设置git的全局user name和email
-  
+  ~~~
   $ git config --global user.name "ygtzz"
   $ git config --global user.email "ygtzz@123.com"
-  
+  ~~~
   2.进入.ssh目录(没有就新建一个)
   
   Windows cd C:/Users/userName/.ssh
@@ -50,7 +50,7 @@ content: '''
   将公钥添加到github上
   
   2.在.ssh下新建config文件，在其中添加配置
-  
+  ~~~
   # gitlab
   Host gitlab
   HostName gitlab.com
@@ -63,7 +63,7 @@ content: '''
   HostName github.com
   User ygtzz
   IdentityFile ~/.ssh/id_rsa_github //windows: IdentityFile C:\\Users\\xxx\\.ssh\\id_rsa_github
-  
+  ~~~
   注意：此处Host是HostName的别名，在git clone 地址的时候会使用host的来判别key，进行下载。例如：git@github.com/ygtzz/lazyload.git项目，在配置下，必须使用
   
   git@{Host}/ygtzz/lazyload.git(即git@github/ygtzz/lazyload.git)地址去下载，git才能根据config找到对应的rsa文件。因此，建议Host和HostName保持一致，这样clone
@@ -71,6 +71,7 @@ content: '''
   时候就不用修改下载地址，直接可以下载。下面是一个支持github，gitlab，码云三个git端的配置文件(已验证可用):
   
   复制代码
+  ~~~
   #gitee
   Host git.oschina.net
   HostName git.oschina.net
@@ -88,6 +89,7 @@ content: '''
   HostName github.com
   User ygtzz
   IdentityFile ~/.ssh/id_rsa
+  ~~~
   复制代码
   3.执行ssh-agent让ssh识别新的私钥
   
@@ -99,10 +101,10 @@ content: '''
   以后，在clone或者add remote的时候，需要把config文件中的host代替git@remoteaddress中的remoteaddress。
   
   4.在git的工作目录中，设置本地的用户名和邮箱
-  
+  ~~~
   $ git config --local user.name "github用户名"
   $ git config --local user.email "注册邮箱"
-  
+  ~~~
   如果不设置用户名，则能正常提交，但提交的用户名会是global设置的用户名
   
   
