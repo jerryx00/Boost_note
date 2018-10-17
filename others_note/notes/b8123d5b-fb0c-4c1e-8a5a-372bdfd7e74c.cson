@@ -1,0 +1,115 @@
+createdAt: "2018-10-17T00:02:40.535Z"
+updatedAt: "2018-10-17T00:02:58.930Z"
+type: "MARKDOWN_NOTE"
+folder: "d2d6983005c94aa457ea"
+title: "git生成ssh key和多账号支持"
+content: '''
+  # git生成ssh key和多账号支持
+  
+  git配置ssh
+  
+  1.首先设置git的全局user name和email
+  
+  $ git config --global user.name "ygtzz"
+  $ git config --global user.email "ygtzz@123.com"
+  
+  2.进入.ssh目录(没有就新建一个)
+  
+  Windows cd C:/Users/userName/.ssh
+  Mac cd ~/.ssh
+  
+  3.终端中执行ssh-keygen生成key
+  
+  $ ssh-keygen -t rsa -C “ygtzz@123.com”
+  (在windows上执行时候，要在git bash中执行ssh-keygen，在cmd中可能无法执行，
+  遇到ssh-keygen不是内部或外部命令，则要在**/Git/usr/bin目录下找到ssh-keygen.exe，
+  将**/Git/usr/bin路径添加到环境变量中)
+  按3个回车，密码为空
+  
+  Your identification has been saved in /home/tekkub/.ssh/id_rsa.
+  Your public key has been saved in /home/tekkub/.ssh/id_rsa.pub.
+  The key fingerprint is:
+  ………………
+  
+  得到两个文件
+  私钥: id_rsa
+  公钥：id_rsa.pub
+  
+  4.在github或gitlab上添加公钥
+  
+  添加多个git账号支持(例如同时使用github和gitlab)
+  
+  1.生成新的ssh key
+  进入.ssh目录，通过命令ssh-keygen生成ssh key，
+  在执行命令后，不要回车，第一步要确认key的文件名，可以输入一个与之前不同的名字
+  例如 id_rsa_github，其后两步，皆回车，则会生成两个文件
+  
+  私钥：id_rsa_github
+  公钥: id_rsa_github.pub
+  
+  将公钥添加到github上
+  
+  2.在.ssh下新建config文件，在其中添加配置
+  
+  # gitlab
+  Host gitlab
+  HostName gitlab.com
+  User ygtzz
+  
+  IdentityFile ~/.ssh/id_rsa  //windows: IdentityFile C:\\Users\\xxx\\.ssh\\id_rsa
+  
+  # github
+  Host github
+  HostName github.com
+  User ygtzz
+  IdentityFile ~/.ssh/id_rsa_github //windows: IdentityFile C:\\Users\\xxx\\.ssh\\id_rsa_github
+  
+  注意：此处Host是HostName的别名，在git clone 地址的时候会使用host的来判别key，进行下载。例如：git@github.com/ygtzz/lazyload.git项目，在配置下，必须使用
+  
+  git@{Host}/ygtzz/lazyload.git(即git@github/ygtzz/lazyload.git)地址去下载，git才能根据config找到对应的rsa文件。因此，建议Host和HostName保持一致，这样clone
+  
+  时候就不用修改下载地址，直接可以下载。下面是一个支持github，gitlab，码云三个git端的配置文件(已验证可用):
+  
+  复制代码
+  #gitee
+  Host git.oschina.net
+  HostName git.oschina.net
+  User ygtzz
+  IdentityFile ~/.ssh/id_rsa_gitee
+  
+  #gitlab
+  Host git.xxx.com
+  Hostname git.xxx.com
+  User mengweif
+  IdentityFile ~/.ssh/id_rsa_gitlab
+  
+  #github
+  Host github.com
+  HostName github.com
+  User ygtzz
+  IdentityFile ~/.ssh/id_rsa
+  复制代码
+  3.执行ssh-agent让ssh识别新的私钥
+  
+  ssh-add ~/.ssh/id_rsa_new
+  该命令如果报错：Could not open a connection to your authentication agent.无法连接到ssh agent，则可执行ssh-agent bash命令后再执行ssh-add命令:
+  
+  ssh-agent bash
+  ssh-add ~/.ssh/id_rsa_new
+  以后，在clone或者add remote的时候，需要把config文件中的host代替git@remoteaddress中的remoteaddress。
+  
+  4.在git的工作目录中，设置本地的用户名和邮箱
+  
+  $ git config --local user.name "github用户名"
+  $ git config --local user.email "注册邮箱"
+  
+  如果不设置用户名，则能正常提交，但提交的用户名会是global设置的用户名
+  
+  
+  参考：https://my.oschina.net/csensix/blog/184434
+  
+           https://www.jianshu.com/p/89cb26e5c3e8
+'''
+tags: []
+isStarred: false
+isTrashed: false
