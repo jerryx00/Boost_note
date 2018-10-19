@@ -1,0 +1,20 @@
+{
+  "folders": [
+    {
+      "key": "d453dbdbdb5b2a23e757",
+      "color": "#3FD941",
+      "name": "thinkphp"
+    },
+    {
+      "key": "62b3c55f19f28698de9c",
+      "color": "#3FD941",
+      "name": "yii2"
+    },
+    {
+      "key": "7fc9ceb275c446acd7c8",
+      "color": "#B013A4",
+      "name": "laravel"
+    }
+  ],
+  "version": "1.0"
+}
