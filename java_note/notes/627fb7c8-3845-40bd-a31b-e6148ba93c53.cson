@@ -1,5 +1,5 @@
 createdAt: "2018-10-17T23:44:30.487Z"
-updatedAt: "2018-10-29T08:14:12.308Z"
+updatedAt: "2018-10-29T11:09:08.867Z"
 type: "MARKDOWN_NOTE"
 folder: "29625d2c21388c63c743"
 title: "django 数据库操作"
@@ -249,6 +249,57 @@ content: '''
   ```
   
   具体可参考 [Django-Model操作数据库(增删改查、连表结构） - RootMe - 博客园](https://www.cnblogs.com/yangmv/p/5327477.html)
+  
+  
+  获取WEB提交过来的值
+  ```python
+  if request.POST:
+              a= request.POST.get('a', 0)
+              b = request.POST.get('b', 0)
+              # 判断参数中是否含有a和b
+              if a and b:
+                  res = add_args(a, b)
+                  dic['number'] = res
+                  dic = json.dumps(dic)
+                  return HttpResponse(dic)
+              else:
+                  return HttpResponse('输入错误')
+  ```
+  
+  接收数组
+  ```javascript
+  $.ajax({
+              cache: false,
+              type: "POST",
+              url: "/userdelete/",
+              traditional:true,  //加上此项可以传数组
+              dataType:'json',
+              async: true,
+              data:{ids:data},  //<QueryDict: {'ids': ['40', '39', '33', '31', '29', '28']}>
+              success: function(data) {
+                  if (data.status == 'success') {
+                      $table.bootstrapTable('remove', {field: 'id', values: ids});
+                  } 
+              },
+              beforeSend: function(xhr, settings) {
+                  xhr.setRequestHeader("X-CSRFToken", csrftoken);
+              }
+    });
+  
+  ```
+  ```python
+  if request.is_ajax():
+          if request.method == 'POST': 
+              array = request.POST.getlist('ids')  #django接收数组 
+              for i in array:
+                 p = UserProfile.objects.get(id=i)
+                 p.delete() 
+          return HttpResponse('{"status":"success"}', content_type='application/json')
+  ```
+  > 说明:
+  > 当参数为'a=1&a=2&a=3' 
+  > request.POST.get('a') –>3 只能获取数组中的最后一个
+  > request.POST.getlist('a') –>[1,2,3]可以获取到数组
 '''
 tags: []
 isStarred: false
