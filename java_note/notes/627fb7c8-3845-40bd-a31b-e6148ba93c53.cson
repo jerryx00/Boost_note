@@ -1,10 +1,10 @@
 createdAt: "2018-10-17T23:44:30.487Z"
-updatedAt: "2018-10-29T05:31:04.191Z"
+updatedAt: "2018-10-29T08:14:12.308Z"
 type: "MARKDOWN_NOTE"
 folder: "29625d2c21388c63c743"
-title: "获取个数"
+title: "django 数据库操作"
 content: '''
-  ## django model参数说明
+  # django 数据库操作
   ### 1.数据库操作
   ```python
   from django.db import models
@@ -204,6 +204,51 @@ content: '''
   * 一对多：models.ForeignKey(其他表)
   * 多对多：models.ManyToManyField(其他表)
   * 一对一：models.OneToOneField(其他表)
+  
+  应用场景：
+  > * 1.一对多：当一张表中创建一行数据时，有一个单选的下拉框（可以被重复选择）
+  例如：创建用户信息时候，需要选择一个用户类型【普通用户】【金牌用户】【铂金用户】等。
+  > * 2.多对多：在某表中创建一行数据是，有一个可以多选的下拉框
+  例如：创建用户信息，需要为用户指定多个爱好
+  > * 3.一对一：在某表中创建一行数据时，有一个单选的下拉框（下拉框中的内容被用过一次就消失了
+  例如：原有含10列数据的一张表保存相关信息，经过一段时间之后，10列无法满足需求，需要为原来的表再添加5列数据
+  
+   一对多：
+   ```python
+  class Game(models.Model):
+      gname = models.CharField(max_length=32)
+   
+  class Host(models.Model):
+      hostname = models.CharField(max_length=32)
+      game = models.ForeignKey('Game')
+  ```
+  多对多：
+  ```python
+  class UserGroup(models.Model):
+      group_name = models.CharField(max_length=16)
+   
+  class User(models.Model):
+      name = models.CharField(max_length=16)
+      sex = models.CharField(max_length=16)
+      email = models.EmailField(max_length=32)
+      usergroup_user = models.ManyToManyField('UserGroup')
+  ```
+  Django model会自动创建第3张关系表，用于对应user id 和usergroup id
+  
+  一对一：   （一对多增加了不能重复）
+  ```pthon
+  class User2(models.Model):
+      name = models.CharField(max_length=16)
+      sex = models.CharField(max_length=16)
+      email = models.EmailField(max_length=32)
+   
+  class Admin(models.Model):
+      username = models.CharField(max_length=32)
+      password = models.CharField(max_length=32)
+      admin_user2 = models.OneToOneField('User2')
+  ```
+  
+  具体可参考 [Django-Model操作数据库(增删改查、连表结构） - RootMe - 博客园](https://www.cnblogs.com/yangmv/p/5327477.html)
 '''
 tags: []
 isStarred: false
