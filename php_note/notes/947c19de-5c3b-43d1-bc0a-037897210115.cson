@@ -1,5 +1,9 @@
 createdAt: "2018-10-17T23:44:30.698Z"
+<<<<<<< HEAD
 updatedAt: "2018-10-21T06:06:25.865Z"
+=======
+updatedAt: "2018-10-19T11:20:26.435Z"
+>>>>>>> 4a3aa082ac541a928c7ba930ba58d68c73ebc226
 type: "MARKDOWN_NOTE"
 folder: "d453dbdbdb5b2a23e757"
 title: "thinkphp-queue 笔记"
@@ -664,7 +668,8 @@ content: '''
   
   注意， `queue_failed` 标签需要在安装了 `thinkphp-queue ` 之后 **手动** 去 `\\application\\tags.php` 文件中添加。
   
-  **注意：该版本有[bug](https:\\\\github.com\\top-think\\think-queue\\issues\\10)，若想实现失败任务回调功能，需要先修改位于 `think-queue\\src\\queue\\Worker.php` 中的 `logFailedJob`方法 , 修改方式如下:**
+  **注意：v1.1.6已经正常。如果是v1.1.16版本，如下可忽略
+  但是v.1.1.2版本有[bug](https:\\\\github.com\\top-think\\think-queue\\issues\\10)，若想实现失败任务回调功能，需要先修改位于 `think-queue\\src\\queue\\Worker.php` 中的 `logFailedJob`方法 , 修改方式如下:**
   
   ```php
   \\**
