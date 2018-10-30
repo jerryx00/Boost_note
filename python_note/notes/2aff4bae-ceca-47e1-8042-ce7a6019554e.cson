@@ -1,0 +1,84 @@
+createdAt: "2018-10-28T14:30:59.915Z"
+updatedAt: "2018-10-28T15:16:27.801Z"
+type: "MARKDOWN_NOTE"
+folder: "00f6276eea4c5c719915"
+title: "Django 开发的小经验"
+content: '''
+  # Django 开发的小经验
+  
+  使用 virtualenv 隔离开发环境
+  
+  使用 pip 管理项目依赖，主要就是一个小技巧，使用 pip freeze > requirements.txt 来保存依赖的模块和版本
+  
+  使用 gitignore.io 这个网站提供的 .gitignore 文件管理代码库文件
+  
+  打包和发布
+  项目的打包和发布用的 Docker，Django 项目的 Dockerfile 特别简单：
+  ```
+  FROM python:3.5
+  COPY ./requirements.txt /src
+  WORKDIR /src
+  RUN pip install -r requirements.txt
+  COPY . /src
+  EXPOSE
+  CMD uwsgi --http :--wsgi-file<path/to/wsgi.py>
+  ```
+  
+  这一个 Dockerfile 模板可以通吃 80% 的 Django 项目了。
+  
+  日志配置
+  既然用 Docker，就放弃了把日志写入文件，直接写到标准输出。
+  setting.py
+  ```
+  LOGGING = {
+    'version': 1,
+  'disable_existing_loggers': False,
+      'formatters': {
+      'verbose': {
+      'format': '[application] %(levelname)s %(asctime)s %(module)s %(message)s'
+          }
+      },
+      'handlers': {
+          'console': {
+              'level': 'DEBUG',
+              'class': 'logging.StreamHandler',
+              'stream': sys.stdout,
+              'formatter': 'verbose'
+          },
+      },
+      'loggers': {
+          'app': {
+              'handlers': ['console'],
+              'level': 'DEBUG',
+              'propagate': True,
+          },
+      },
+  }
+  ```
+  新版本的 uwsgi 已经可以把 webapp 的日志收集起来输出到标准输出里面了。如果需要收集、管理日志的话，就是用 Docker 日志收集工具，直接收集 Docker 容器的日志即可。
+  
+  自动化测试
+  既然是纯后端项目，工程师完全可以通过自动化测试来检测自己的代码。Django 本身对测试提供了很好的支持，可以通过 sqlite 来搭建测试数据库，还有基于内存的缓存，做测试不会增加对其他系统的依赖。开发起来事半功倍。
+  
+  除了要写自动化测试代码，还要能统计测试覆盖率。目前我们用的是 coverage.py 这个工具，说实话没有 node.js 的 istanbul 好用，输出的报告没有 Istanbul 详细和易读。不过用来检查 “死代码” 还是够用的。
+  
+  针对 http 代码的测试
+  有些项目需要对接的第三方系统比较多，比如微信认证、支付、短信等常见的，可能还有其他一些垂直业务领域的系统。这部分接口对接的代码，也应该纳入到测试当中，毕竟 Python 作为脚本语言，代码很容易出现错误。
+  
+  这块一般是用 responses 这个模块来 mock http 请求。
+  
+  定时任务
+  有一些 Django 项目需要做一些定时任务。首先，绝对不用 linux 内置的 crontab。主要的问题还是维护的成本高，没准哪天就把这个配置给忘了。
+  
+  我们现在方式都是借助 Django Command 的功能，将定时任务封装成一个 command。在这个 command 里面运行一个 scheduler，或者celery。
+  
+  
+  在虚拟环境中使用pip生成：
+  (venv) $ pip freeze >requirements.txt
+  当需要创建这个虚拟环境的完全副本，可以创建一个新的虚拟环境，并在其上运行以下命令：
+  (venv) $ pip install -r requirements.txt
+  pip install -r requirements.txt
+'''
+tags: []
+isStarred: false
+isTrashed: false

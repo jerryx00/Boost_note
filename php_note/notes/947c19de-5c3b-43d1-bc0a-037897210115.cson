@@ -1,5 +1,5 @@
 createdAt: "2018-10-17T23:44:30.698Z"
-updatedAt: "2018-10-19T00:04:19.528Z"
+updatedAt: "2018-10-21T06:06:25.865Z"
 type: "MARKDOWN_NOTE"
 folder: "d453dbdbdb5b2a23e757"
 title: "thinkphp-queue 笔记"
@@ -46,7 +46,8 @@ content: '''
      > 1、 打开环境，查看[phpinfo()](http:\\\\localhost\\phpinfo.php)
      Compiler	MSVC11 (Visual C++ 2012)
      Architecture	x86
-     PHP Extension	20121212 
+     PHP Extension Build	API20121212,NTS,VC11
+     注意查看是ts还是nts,以及vc版本号
       然后下载
    php_igbinary.dll、    、php_redis.dll
     注意选择对应的redis*.dll
@@ -55,9 +56,15 @@ content: '''
            extension=php_redis.dll
    3、 重启apache ，查看phpinfo 界面。如下则表示安装成功
          redis support有显示内容  
-   4、  redis*.dll在[PECL :: Package :: redis](https:\\\\pecl.php.net\\package\\redis)下载
-      php_redis.dll
-      在[windows.php.net - \\downloads\\pecl\\releases\\igbinary\\](https:\\\\windows.php.net\\downloads\\pecl\\releases\\igbinary\\)   下载,
+   4、  redis*.dll下载地址
+   在[PECL :: Package :: redis](https:\\\\pecl.php.net\\package\\redis)下载
+    php_igbinary.dll下载地址
+      在    
+      [windows.php.net - /downloads/pecl/releases/igbinary/1.2.1/](https://windows.php.net/downloads/pecl/releases/igbinary/1.2.1/)   或 [windows.php.net - /downloads/pecl/releases/igbinary/2.0.7/](https://windows.php.net/downloads/pecl/releases/igbinary/2.0.7/)
+      
+      下载时注意看命令php_igbinary-1.2.1-5.5-nts-vc11-x86.zip
+      上述表示php5.5的ntsr vc11的x86版本。不要下载了哦。
+      
      PHP redis扩展安装
     https:\\\\pecl.php.net\\package\\redis
    windows redis下载
