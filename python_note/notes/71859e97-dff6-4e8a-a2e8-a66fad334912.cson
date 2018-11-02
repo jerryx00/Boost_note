@@ -1,7 +1,7 @@
 createdAt: "2018-10-17T23:44:30.487Z"
-updatedAt: "2018-10-29T11:09:08.867Z"
+updatedAt: "2018-10-30T00:44:06.572Z"
 type: "MARKDOWN_NOTE"
-folder: "29625d2c21388c63c743"
+folder: "00f6276eea4c5c719915"
 title: "django 数据库操作"
 content: '''
   # django 数据库操作
@@ -175,7 +175,7 @@ content: '''
       models.UserInfo.objects.create(name='yangmv')
       after = models.UserInfo.objects.all()
       print after[0].ctime
-      return render(request, 'home/home.html')
+      return render(request, 'home\\home.html')
     ```
     
   * models.ImageField                        图片
@@ -248,7 +248,7 @@ content: '''
       admin_user2 = models.OneToOneField('User2')
   ```
   
-  具体可参考 [Django-Model操作数据库(增删改查、连表结构） - RootMe - 博客园](https://www.cnblogs.com/yangmv/p/5327477.html)
+  具体可参考 [Django-Model操作数据库(增删改查、连表结构） - RootMe - 博客园](https:\\\\www.cnblogs.com\\yangmv\\p\\5327477.html)
   
   
   获取WEB提交过来的值
@@ -271,11 +271,11 @@ content: '''
   $.ajax({
               cache: false,
               type: "POST",
-              url: "/userdelete/",
-              traditional:true,  //加上此项可以传数组
+              url: "\\userdelete\\",
+              traditional:true,  \\\\加上此项可以传数组
               dataType:'json',
               async: true,
-              data:{ids:data},  //<QueryDict: {'ids': ['40', '39', '33', '31', '29', '28']}>
+              data:{ids:data},  \\\\<QueryDict: {'ids': ['40', '39', '33', '31', '29', '28']}>
               success: function(data) {
                   if (data.status == 'success') {
                       $table.bootstrapTable('remove', {field: 'id', values: ids});
@@ -294,7 +294,7 @@ content: '''
               for i in array:
                  p = UserProfile.objects.get(id=i)
                  p.delete() 
-          return HttpResponse('{"status":"success"}', content_type='application/json')
+          return HttpResponse('{"status":"success"}', content_type='application\\json')
   ```
   > 说明:
   > 当参数为'a=1&a=2&a=3' 

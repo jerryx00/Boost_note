@@ -1,10 +1,20 @@
 createdAt: "2018-10-14T00:05:37.930Z"
-updatedAt: "2018-10-14T10:57:00.764Z"
+updatedAt: "2018-10-30T00:48:00.669Z"
 type: "MARKDOWN_NOTE"
 folder: "00f6276eea4c5c719915"
 title: "django资源推荐"
 content: '''
   # django资源推荐
+  * 1.使用git的人基本都会为配置".gitignore"而烦恼，我也不例外。最近我发现了一个可以自动生成".gitignore"的网站，使用起来特别的方便，更让人高兴的是它可以安装到命令行中——只要一个简单的命令就可以很容易地得到你想要的".gitignore"文件。这些".gitignore"文件都是经过仔细研究并实践才发布的，一般不会有什么问题，也不会有什么遗漏的，我们大可放心使用。
+  git下安装
+  ```
+  git config --global alias.ignore '!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi'
+  git ignore java
+  ```
+  或者直接访问如下网址，输入pycharm或phpstorm等，就会生成对应的ingore文件
+   https://www.gitignore.io/api/java
+  
+  * 
   最受人喜爱的开源 Django 包
   Django 围绕“可重用应用[1]”的思想建立：自包含的包提供了可重复使用的特性。你可以将这些可重用应用组装起来，在加上适用于你的网站的特定代码，来搭建你自己的网站。Django 具有一个丰富多样的、由可供你使用的可重用应用组建起来的生态系统——PyPI 列出了超过 8000个 Django 应用[2]——可你该如何知道哪些是最好的呢？
   
