@@ -1,5 +1,5 @@
 createdAt: "2018-10-14T12:54:48.378Z"
-updatedAt: "2018-10-16T23:56:26.040Z"
+updatedAt: "2018-11-03T16:38:17.227Z"
 type: "MARKDOWN_NOTE"
 folder: "00f6276eea4c5c719915"
 title: "Python CMS相关"
@@ -58,6 +58,29 @@ content: '''
   
   
   flask 
+  
+  国内比较好的，
+  * [lazzyfu (lazzyfu) · GitHub](https://github.com/lazzyfu)
+  *  mtrops_v2
+  *  [GitHub - guige/Django-AdminLTE: Use Django Frame build AdminLTE2.](https://github.com/guige/Django-AdminLTE)
+  *  [GitHub - fengjianque/django-template: admin system based on adminlte template](https://github.com/fengjianque/django-template)
+  *  [GitHub - taicai/django-adminLTE2: Django整合adminLTE](https://github.com/taicai/django-adminLTE2)
+  *  [GitHub - guohongze/adminset: 自动化运维平台：CMDB、CD、DevOps、资产管理、任务编排、持续交付、系统监控、运维管理、配置管理](https://github.com/guohongze/adminset)    python3.6.6
+  *  [GitHub - ctxis/django-admin-view-permission: Reusable application which provides a view permission for the existing models.](https://github.com/ctxis/django-admin-view-permission)
+  *  [GitHub - gkuhn1/django-admin-multiupload: Multi file upload for django-admin app](https://github.com/gkuhn1/django-admin-multiupload)
+  
+  * [pyecharts: pyecharts 是一个用于生成 Echarts 图表的类库](https://gitee.com/mirrors/pyecharts) --【插件】
+  * [saltops: [停止维护!] SaltOps是一个基于SaltStack和Django开发的运维平台， 平台的主要功能包括：CMDB、包发布管理、工具系统、最终作为包发布和工具系统的角色 与Jenkins、Zabbix等系统进行整合](https://gitee.com/wuwenhao/saltops)
+  * [tensorflow: TensorFlow 是谷歌的第二代机器学习系统，按照谷歌所说，在某些基准测试中，TensorFlow的表现比第一代的DistBelief快了2倍。 TensorFlow 内建深度学习的扩展支持，任何能够用计算流图形来表达的计算，都可以使用TensorFlow。](https://gitee.com/mirrors/tensorflow)
+  * glances 是一款用于 Linux、BSD 的开源命令行系统监视工具，它使用 Python 语言开发，能够监视 CPU、负载、内存、磁盘 I/O、网络流量、文件系统、系统温度等信息--[GitHub - nicolargo/glances: Glances an Eye on your system. A top/htop alternative.](https://github.com/nicolargo/glances)
+  * [PyQQbot首页、文档和下载 - Python 实现的 QQ 机器人 - 开源中国社区](https://www.oschina.net/p/pyqqbot)
+  
+  ### CMS
+  * [GitHub - cookieY/Yearning: Mysql web端sql审核平台](https://github.com/cookieY/Yearning)----不错
+  * [osroom: Flask 开源Web, CMF, 支持MakeDown+富文本，支持Restful Api.作为BLOG网站也不错！]-----不错(https://gitee.com/osroom/osroom)
+  * TorCMS 
+  
+  ### python深度学习框架
   
   
   

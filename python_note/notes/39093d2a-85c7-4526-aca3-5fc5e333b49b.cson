@@ -1,11 +1,51 @@
 createdAt: "2018-10-14T10:54:26.922Z"
-updatedAt: "2018-10-14T10:55:10.424Z"
+updatedAt: "2018-10-28T10:08:49.490Z"
 type: "MARKDOWN_NOTE"
 folder: "545ee5f1fcb7e929627b"
 title: "wagtail学习"
 content: '''
   # wagtail学习
   [GitHub - wagtail/wagtail: A Django content management system focused on flexibility and user experience](https://github.com/wagtail/wagtail)
+  
+  
+  ## bakerydemo环境搭建
+    
+  参见[GitHub - wagtail/bakerydemo: Next generation Wagtail demo, born in Reykjavik](https://github.com/wagtail/bakerydemo#installation)
+  
+  git clone https://github.com/wagtail/bakerydemo.git  /e/GIT_PYTHON/bakerydemo
+  cd bakerydemo
+  pip install -r requirements.txt
+  
+  cp bakerydemo/settings/local.py.example bakerydemo/settings/local.py
+  echo "DJANGO_SETTINGS_MODULE=bakerydemo.settings.local" > .env
+  
+  修改bakerydemo.settings.local.py中的数据库配置
+  DATABASES = {
+      'default': {
+          'ENGINE': 'django.db.backends.postgresql',
+          'NAME': 'bakerydemo',
+          'USER': 'postgres',
+          'PASSWORD': 'password',
+          'HOST': '127.0.0.1',
+          'PORT': '5432',
+      }
+  }
+  
+  ./manage.py migrate
+  ./manage.py load_initial_data
+  ./manage.py runserver
+  
+  要设置数据库并加载初始数据，请运行以下命令：
+  ./manage.py migrate
+  ./manage.py load_initial_data
+  ./manage.py runserver
+  
+  中文时区修改文件
+  bakerydemo/settings/base.py
+  LANGUAGE_CODE = 'zh-Hans'
+  TIME_ZONE = 'Asia/Shanghai'
+  
+  或者直接双击E:\\GIT_PYTHON\\bakerydemo下的django_start_8001.bat启动程序,然后使用 admin / changeme 登录到管理后台。
   
   
 '''
