@@ -1,0 +1,28 @@
+createdAt: "2018-11-06T01:17:34.764Z"
+updatedAt: "2018-11-06T01:17:56.187Z"
+type: "MARKDOWN_NOTE"
+folder: "f7a11fb6589a846fc20a"
+title: "linux常用命令"
+content: '''
+  # linux常用命令
+  find /opt/apache-tomcat-7.0.62/logs/*.*  | xargs grep "openid"|grep -v "CmsIndexDataCollect"
+  
+  find /opt/apache-tomcat-7.0.62/logs/*.*  | xargs grep "wechat_"
+  
+  
+  find /opt/apache-tomcat-7.0.62/logs/*.*  | xargs grep "wechat_"
+  
+  find /opt/apache-tomcat-7.0.62/logs/*.*  | xargs grep "wechat_post2a"
+  
+  find /opt/apache-tomcat-7.0.62/logs/*.*  | xargs grep "wechat_openId3"
+  
+  
+  find /opt/apache-tomcat-7.0.62/logs/*.*  | xargs grep "wechat_p"
+  
+  find /opt/apache-tomcat-7.0.62/logs/*.*  | xargs grep "wechat_o"
+  
+  http://localhost:8080/jeewx/wechatController.do?wechat&signature=e15eb5ccb13a6e99c9b8ad5c6711b8e9338dfe51&timestamp=1489212796&nonce=1306580698&openid=opuM-vxO3W-INjok4482J3THyE0o&echostr=a
+'''
+tags: []
+isStarred: false
+isTrashed: false

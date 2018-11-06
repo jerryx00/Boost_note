@@ -1,0 +1,64 @@
+createdAt: "2018-11-06T01:23:00.668Z"
+updatedAt: "2018-11-06T01:23:14.310Z"
+type: "MARKDOWN_NOTE"
+folder: "b4a5f2883770fc10d06e"
+title: "GO入门文档"
+content: '''
+  # GO入门文档
+  开发工具： LiteIDE
+  
+  http://www.cnblogs.com/Leo_wl/p/3367321.html
+  
+  GO语言软件包下载
+  http://www.golangtc.com/download
+  
+  =============================================
+  GO IDE方案：
+  
+  1. Gogland
+  
+  2. Eclipse with goclipse
+  
+  3. LiteIDE
+   下载地址 https://sourceforge.net/projects/liteide/files/
+  
+  4. Komodo IDE （支持 php/go/python)
+  
+  5. Idea + go插件（推荐）
+  
+  编辑器方案：
+  
+  1. Atom
+  
+  2. Brackets
+  
+  3. Visual Studio Code
+  
+  云Go IDE方案：
+  
+  1. Cloud9
+  
+  2. CodeEnv
+  
+  3. Wide
+  
+  
+  目前面向Python语言的IDE选项可谓相当丰富，而我们也 通过层层筛选最终确定了七位优胜者。当然，这些解决方案亦各具优势——有些适用于大规模主复杂度开发工作，有些则更适合刚刚接触Python的新手。下面，我们将共同探索这七款让你魂牵梦绕的出色Python IDE。
+  
+  1. Eric6
+  
+  2. Wing IDE
+  
+  3. Pyzo
+  
+  4. Thonny
+  
+  5. NINJA-IDE
+  
+  6. Visual Studio Code
+  
+  7. Atom
+'''
+tags: []
+isStarred: false
+isTrashed: false

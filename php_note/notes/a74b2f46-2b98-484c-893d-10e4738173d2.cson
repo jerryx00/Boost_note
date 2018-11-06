@@ -1,0 +1,25 @@
+createdAt: "2018-11-06T01:33:14.893Z"
+updatedAt: "2018-11-06T01:33:23.662Z"
+type: "MARKDOWN_NOTE"
+folder: "d453dbdbdb5b2a23e757"
+title: "thinkphp cms"
+content: '''
+  # thinkphp cms
+  Thinkphp5的学习框架
+  
+  https://github.com/honraytech/VueThink
+  
+  项目介绍
+  
+  VueThink是一套基于Vue全家桶（Vue2.x + Vue-router2.x + Vuex）+ Thinkphp的前后端分离框架。 脚手架构建也可以通过vue官方的vue-cli脚手架工具构建 实现了一般后台所需要的功能模块
+  
+  VueThink不仅适用于管理后台或管理系统开发，且广泛适用于B/S架构的项目开发。VueThink是对前后端分离技术的应用实践，2016年由洪睿科技的技术团队研发并投入商业开发使用，已有许多的商业项目实践。而今框架开源，希望能有更多志同道合的伙伴参与VueThink的迭代 ^_^
+  
+  
+  
+  Thinkphp的一些助手类
+  https://github.com/top-think/think-helper
+'''
+tags: []
+isStarred: false
+isTrashed: false

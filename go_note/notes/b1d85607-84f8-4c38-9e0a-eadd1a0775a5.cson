@@ -1,0 +1,68 @@
+createdAt: "2018-11-06T01:22:10.452Z"
+updatedAt: "2018-11-06T01:24:49.933Z"
+type: "MARKDOWN_NOTE"
+folder: "b4a5f2883770fc10d06e"
+title: "流行的GO语言框架"
+content: '''
+  # 流行的GO语言框架
+  
+  Golang被称为云计算时代的C语言，它以其独特的优势逐渐被越来越多的公司所关注和使用。为了充分利用Golang的Web开发优势，有必要熟悉一下Go语言的web框架。
+  
+  1  Beego （http://beego.me/） 
+  Beego是一个完全的MVC框架，你可以使用你的Go语言专业技术构建你的web应用程序。Beego框架下，你可以
+  自动化地实现测试、打包和部署。正如下面所说的一样。
+  
+  使用beego 进行开发的一个admin系统
+  
+  项目中使用 ace admin 地址： https://github.com/bopoda/ace
+  
+  项目是个demo
+  
+  做一个简单的crud。
+  
+  http://blog.csdn.net/freewebsys/article/details/68955060
+  
+  https://github.com/freewebsys/go-admin
+  
+  BEEGO入门
+  http://www.cnblogs.com/huligong1234/p/4707282.html
+  
+  2 Revel（http://revel.github.io/）
+  
+  
+    Revel能让Go语言的web开发如虎添翼，大大提高你的开发效率。
+  
+  3 Martini (http://martini.codegangsta.io)
+  
+   Martini是一个受到Sinatra (一个Ruby 框架)启发而开发的Go语言web框架。使用Martini，你可以快速写你的模块化应用或者服务。
+  
+  【Note：中国地区无法访问此网页 】
+  
+  4 Traffic（https://github.com/pilu/traffic）
+  
+  
+  Traffic 同样也是受Sinatra的regexp/pattern 互斥思想启发下开发的web框架。它是一个小框架，并且是轻量型的。因此，它具有很好的灵活性，扩展性。
+  
+  
+  5 Gin(https://gin-gonic.github.io/gin/)
+  
+  
+        Gin类似于Martini，但是具备更好的性能。如果你喜欢高性能和高产出，你会喜欢上Gin.
+  
+  6  Goji（https://goji.io/）
+  
+   Goji是一个轻量型的web框架，具有简约性和灵活性的多路路由请求特性，正如它所标榜自己的那样。
+  
+  
+  7. tango   https://github.com/lunny/tango
+  
+  7. https://github.com/henrylee2cn/thinkgo
+  
+  ThinkGo 是一款 Go 语言编写的 web 快速开发框架。它基于开源框架 Gin 进行二次开发，旨在实现一种类 ThinkPHP 的高可用、高效率的 web 框架。在此感谢 Gin 和 httprouter。它最显著的特点是模块、控制器、操作三段式的标准 MVC 架构，且模块与插件的目录结构完全一致，令开发变得非常简单灵活。
+  
+  =====================================================
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,66 @@
+createdAt: "2018-11-06T01:24:00.212Z"
+updatedAt: "2018-11-06T02:05:11.666Z"
+type: "MARKDOWN_NOTE"
+folder: "d453dbdbdb5b2a23e757"
+title: ""
+content: '''
+  PHP
+  
+  https://www.oschina.net/project/tags
+  
+  全部工具都可以通过 上述页面获取
+  
+  
+  PHP-Druid 
+  
+  
+  PHP源文件加密工具 PHP Screw [推荐]
+  php文件通常以文本格式存贮在服务器端, 很容易被别人读到源代码, 为了对源代码进行保护, 可以采用对源代码进行加密的方式.要实现该功能需要两部分:一是加密程序,实现对PHP文件的加密. 另一个...
+  
+  
+  Ladep
+  
+  是基于 Laravel 框架的最优部署程序。是部署 Laravel 项目的最佳方式。
+  
+  php代码检查工具
+  
+  PHP Mess Detector(http://phpmd.org/)
+  PHP项目体检工具，根据你设定的标准（如单一文件代码体积，未使用的参数个数，未使用的方法数）检查PHP代码，超出设定的标准时报警。
+  
+  PHP Copy Paste Detector(https://github.com/sebastianbergmann/...)
+  顾名思义，检查冗余代码的
+  
+  PHP Dead Code Detector(https://github.com/sebastianbergmann/...)
+  看名字就知道了，检查从未被调用过的方法
+  
+  =======================================
+  PHP Code Sniffer(http://pear.php.net/package/PHP_CodeS...)
+  老牌代码格式化工具，PHP写的，Pear包，可自己hack，可集成到命令行里。
+  
+  linux下
+       [root@xugp xugp]# sudo /opt/lampp/bin/pear install PHP_CodeSniffer-2.2.0
+        install ok: channel://pear.php.net/PHP_CodeSniffer-2.2.0
+  windows
+      D:>D:\\OftenSoft\\xampp\\php\\pear.bat install G:\\PHP_CodeSniffer-2.2.0
+           install ok: channel://pear.php.net/PHP_CodeSniffer-2.2.0
+           (php安装目录下，如D:\\OftenSoft\\xampp\\php\\pear.bat)
+          
+  Writing a full report to a file and a summary report to the screen
+  
+  ~~~
+  phpcs --report-full=/path/to/full.txt --report-summary /path/to/code
+   phpcs --report-full=e:\\easyadmin/full.txt --report-summary e:\\easyadmin\\Admin
+   ~~~
+     报表查看
+     ~~~
+  http://pear.php.net/manual/en/package.php.php-codesniffer.reporting.php
+  ~~~
+  ===================================================================
+  你还可以用jenkins把上述工具以plugins形式整合起来，做持续集成：http://jenkins-php.org/
+  
+  你还可以用xinc+phing跟上述工具集成起来做持续集成后的自动化打包发布：http://code.google.com/p/xinc/
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

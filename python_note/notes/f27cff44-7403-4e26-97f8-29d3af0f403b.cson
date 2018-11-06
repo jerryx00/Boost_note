@@ -1,9 +1,19 @@
 createdAt: "2018-10-28T14:30:59.667Z"
-updatedAt: "2018-10-28T14:30:59.667Z"
+updatedAt: "2018-11-06T01:26:16.158Z"
 type: "MARKDOWN_NOTE"
 folder: "00f6276eea4c5c719915"
-title: ""
-content: ""
+title: "python 知识点"
+content: '''
+  # python 知识点
+  Python从json中提取数据
+  #json string:
+  s = json.loads('{"name":"test", "type":{"name":"seq", "parameter":["1", "2"]}}')
+  print s
+  print s.keys()
+  print s["name"]
+  print s["type"]["name"]
+  print s["type"]["parameter"][1]
+'''
 tags: []
 isStarred: false
 isTrashed: false

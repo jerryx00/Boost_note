@@ -14,6 +14,11 @@
       "key": "545ee5f1fcb7e929627b",
       "color": "#B013A4",
       "name": "wagtail-cms"
+    },
+    {
+      "key": "a7d2d4b537127510907d",
+      "color": "#2BA5F7",
+      "name": "python爬虫"
     }
   ],
   "version": "1.0"

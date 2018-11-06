@@ -1,0 +1,51 @@
+createdAt: "2018-11-06T01:32:36.517Z"
+updatedAt: "2018-11-06T01:46:59.677Z"
+type: "MARKDOWN_NOTE"
+folder: "feaed0f01b145db4c6d3"
+title: "angular好用的插件集合（持续更新中）"
+content: '''
+  angular好用的插件集合（持续更新中）
+  https://segmentfault.com/a/1190000003858219
+  
+  js
+  http://parsleyjs.org
+  
+  web开发 常用工具
+  
+  1) Postman - REST Client
+  2) JSON-handle(0.0.1.3)
+  
+  echart示例
+  http://echarts.baidu.com/echarts2/doc/example.html
+  http://echarts.baidu.com/examples.html
+  
+  echart php相关的
+  https://github.com/hisune/Echarts-PHP
+  
+  
+    echarts-line.js : 折线图（如需折柱动态类型切换，require时还需要echarts/chart/bar）
+    echarts-bar.js : 柱形图（如需折柱动态类型切换，require时还需要echarts/chart/line）
+    echarts-scatter.js : 散点图
+    echarts-k.js : K线图
+    echarts-pie.js : 饼图（如需饼漏斗图动态类型切换，require时还需要echarts/chart/funnel）
+    echarts-radar.js : 雷达图
+    echarts-map.js : 地图
+    echarts-force.js : 力导向布局图（如需力导和弦动态类型切换，require时还需要echarts/chart/chord）
+    echarts-chord.js : 和弦图（如需力导和弦动态类型切换，require时还需要echarts/chart/force）
+    echarts-funnel.js : 漏斗图（如需饼漏斗图动态类型切换，require时还需要echarts/chart/pie）
+    echarts-gauge.js : 仪表盘
+    echarts-eventRiver.js : 事件河流图
+  
+  echart基础文档
+  http://echarts.baidu.com/echarts2/doc/doc.html
+  http://echarts.baidu.com/echarts2/doc/start.html
+  
+  ace admin框架及字体
+  
+  http://fontawesome.io
+  http://fontawesome.io/icons/
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

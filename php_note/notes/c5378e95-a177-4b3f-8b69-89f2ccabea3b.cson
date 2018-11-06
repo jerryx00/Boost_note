@@ -1,11 +1,31 @@
 createdAt: "2018-11-06T00:11:45.835Z"
-updatedAt: "2018-11-06T00:12:07.188Z"
+updatedAt: "2018-11-06T01:11:17.746Z"
 type: "MARKDOWN_NOTE"
 folder: "7fc9ceb275c446acd7c8"
 title: "laravel cms"
 content: '''
   # laravel cms
-  laravel框架
+  
+  ## 13 个快速构建 Laravel 后台的扩展包
+  https://segmentfault.com/a/1190000012312100
+  
+  http://laravelacademy.org/post/6417.html
+  基于 Laravel 5 构建的、支持模块化和多语言的 CMS —— AsgardCMS
+  
+   Laravel 速查表
+  https://cs.laravel-china.org/
+  
+  Laravel 项目开发规范
+  https://laravel-china.org/courses/laravel-specification
+  
+  backpack框架
+  https://laravel-backpack.readme.io
+  
+  
+  laravel  package包,提供各种laravel包
+  https://github.com/larapack
+  
+  ## laravel框架
   
   https://gitee.com/cc-sponge/Alpaca-Spa-Laravel
   Alpaca-Spa-Laravel 是用Alpaca-Spa + Laravel 前后端分离开发的一款后台管理系统的DEMO. 主要功能模块有登录、定时任务管理、用户管理、权限管理、个人信息管理等。在实际开发中可以根据具体的需求添加新的功能。 开发模式为前后分离开发，Alpaca-Spa负责实现前端功能，包括组织页面结构，渲染页面数据、样式，交互逻辑等，Laravel负责提供后台功能，访问数据库，处理业务逻辑，提供数据接口给前端，

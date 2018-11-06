@@ -1,0 +1,77 @@
+createdAt: "2018-11-06T01:29:13.724Z"
+updatedAt: "2018-11-06T01:29:48.932Z"
+type: "MARKDOWN_NOTE"
+folder: "a7d2d4b537127510907d"
+title: "爬虫介绍"
+content: '''
+  # 爬虫介绍
+  
+  pyspider 开源且强大的网络爬虫系统
+  
+  官网
+  http://www.pyspider.cn/page/1.html
+  
+  参考 
+  http://www.cnblogs.com/BigFishFly/p/6380046.html
+  
+  
+  
+  Scrapy入门教程/scrapy 介绍
+  http://scrapy-chs.readthedocs.io/zh_CN/latest/intro/tutorial.html
+  
+  
+  
+  
+  http://blog.csdn.net/fullerhua/article/details/51690812
+  https://github.com/FullerHua/gooseeker
+  
+  
+  =================================
+  E:\\PYTHON_CODE>scrapy startproject gooseeker
+  New Scrapy project 'gooseeker', using template directory 'd:\\\\oftensoft\\\\python2
+  7\\\\lib\\\\site-packages\\\\scrapy\\\\templates\\\\project', created in:
+      E:\\PYTHON_CODE\\gooseeker
+  
+  You can start your first spider with:
+      cd gooseeker
+      scrapy genspider example example.com
+  
+  E:\\PYTHON_CODE>
+  
+  注意下载如下包
+  pip install pypiwin32
+  pip install twisted-win
+  
+  
+  ==========================================================================
+  scrapy 教材
+  http://blog.csdn.net/u012150179/article/details/32911511
+  
+  小工具：
+  关于网页代码中意向信息的查找可以借助几个工具：
+  第一个——Firefox插件Firebug。
+  第二个——Firefox插件XPath。可以快速的在网页中对xpath表达式的正确性进行验证。 WebDriver Element Locator f
+  第三个——scrapy shell.关于其使用可以查看教程。 
+  
+  安装插件:
+  
+  　　1.firebug
+  
+  　　2.FirePath
+  
+  　　3.xpath finder
+  
+  　　4.XPath Checker
+  ==========================================================================
+  =========
+  http://www.gooseeker.com/index.html
+  jerry2017/jerry2017
+  jerry2017@com.com / jerry2017
+  
+  =======================================================================
+  win7(64bit)下pyspider的安装
+  http://blog.csdn.net/q1204265228/article/details/53316375
+'''
+tags: []
+isStarred: false
+isTrashed: false

@@ -1,9 +1,33 @@
 createdAt: "2018-10-08T11:23:44.382Z"
-updatedAt: "2018-10-09T08:16:19.322Z"
+updatedAt: "2018-11-06T01:12:38.819Z"
 type: "MARKDOWN_NOTE"
 folder: "be96790ae5c9e05f450a"
-title: ""
-content: ""
+title: "nutwk一些命令"
+content: '''
+  # nutwk一些命令
+  nutwk3
+  运行
+  cd e:/java_code/
+  mvn install
+  mvn jetty:run
+  
+  http://127.0.0.1:8080/sysadmin
+  
+  
+  nutwk4
+  运行
+  mvn install
+  cd wk-app
+  cd wk-web
+  mvn jetty:run
+  
+  
+  
+  nutwk5
+  运行
+  mvn install
+  mvn tomcat:run
+'''
 tags: []
 isStarred: false
 isTrashed: false
