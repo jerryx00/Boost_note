@@ -1,5 +1,5 @@
 createdAt: "2018-10-28T14:30:59.667Z"
-updatedAt: "2018-11-06T01:26:16.158Z"
+updatedAt: "2018-11-08T01:13:48.550Z"
 type: "MARKDOWN_NOTE"
 folder: "00f6276eea4c5c719915"
 title: "python 知识点"
@@ -13,6 +13,37 @@ content: '''
   print s["name"]
   print s["type"]["name"]
   print s["type"]["parameter"][1]
+  
+  ## 
+  if request.method == 'POST':
+  
+  result = json.loads(request.body.decode()).get('ip')
+  
+  request.body 得到的是bytes类型的数据，先解码为str类型，也就是说request.body.decode()的结果是一个json字符串，此时json.loads（）转为Python字典，然后获取对应值
+  ```javascript
+  var url = "some url";
+  var data = {"size": "width=8, height=9", "weight": "8 kg", "desc": "'&='"};
+  var string_data = JSON.stringify(data);
+   
+  $.ajax({
+  	type: "POST",
+  	url: url,
+  	async: true,
+  	data: {data: string_data},
+  	success: function(response) {
+  		alert("ok");
+  	}
+  });
+  ```
+  ```python
+  def print_post_data(request):
+      data = request.POST.get("data", None)
+      print "post data: %s" % (data, )
+      data = simplejson.loads(data)
+      return HttpResponse("Success read post data.")
+  
+  ```
+  
 '''
 tags: []
 isStarred: false
