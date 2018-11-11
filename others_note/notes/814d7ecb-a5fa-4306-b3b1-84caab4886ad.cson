@@ -1,5 +1,5 @@
 createdAt: "2018-10-09T08:42:45.874Z"
-updatedAt: "2018-10-15T01:03:47.666Z"
+updatedAt: "2018-11-11T14:44:22.608Z"
 type: "MARKDOWN_NOTE"
 folder: "d2d6983005c94aa457ea"
 title: "PlantUML（程序员绘制流程图专用工具）"
@@ -291,6 +291,9 @@ content: '''
   详细的中文教程：https://wenku.baidu.com/view/867a78b448d7c1c708a145f4.html
   
   详细的英文教程：http://plantuml.com/PlantUML_Language_Reference_Guide.pdf
+  
+  官方专业参考（该文档比较全）
+  [顺序图的语法和功能](http://plantuml.com/sequence-diagram)
 '''
 tags: []
 isStarred: false
