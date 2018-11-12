@@ -1,9 +1,43 @@
 createdAt: "2018-10-16T01:11:17.626Z"
-updatedAt: "2018-10-16T01:11:17.626Z"
+updatedAt: "2018-11-12T00:06:49.627Z"
 type: "MARKDOWN_NOTE"
 folder: "d2d6983005c94aa457ea"
-title: ""
-content: ""
+title: "GIT常用命令"
+content: '''
+  # GIT常用命令
+  
+  第一次
+  git add .
+  git commit -m "init commit"
+  git remote add origin https://github.com/jerrynj/1.0.0.20180911_full.git
+  git pull origin master (可能会出错，可忽略)
+  git push -u origin master
+  
+  
+  第二次
+  git add .
+  git commit -m "init commit"
+  git push -u origin master
+  
+  
+  取消本地修改
+  git reset HEAD . 
+  
+  
+  设置特定文件不比较
+  git config diff.nodiff.command /usr/bin/true
+  然后将.gitattributes文件放到目录下（.gitignore在一起）
+  .idea/* diff=nodiff
+  dataSources.xml diff=nodiff
+  dataSources.local.xml diff=nodiff
+  *.pyc diff=nodiff
+  
+  删除已经提交的目录
+  git rm -r .idea
+  git commit -m "init commit"
+  git push -u origin master
+  
+'''
 tags: []
 isStarred: false
 isTrashed: false
