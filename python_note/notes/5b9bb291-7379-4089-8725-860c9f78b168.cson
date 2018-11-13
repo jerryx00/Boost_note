@@ -1,9 +1,278 @@
 createdAt: "2018-11-08T01:21:41.726Z"
-updatedAt: "2018-11-08T01:21:41.726Z"
+updatedAt: "2018-11-13T05:48:34.085Z"
 type: "MARKDOWN_NOTE"
 folder: "00f6276eea4c5c719915"
-title: ""
-content: ""
+title: "django数据库操作2"
+content: '''
+  # django数据库操作2
+  
+  
+  Django文档——Model中的ForeignKey,ManyToManyField与OneToOneField
+  关联关系字段 (Relationship fields)
+  ForeignKey,ManyToManyField与OneToOneField分别在Model中定义多对一，多对多，一对一关系。
+  
+  
+  例如，一本书由一家出版社出版，一家出版社可以出版很多书。一本书由多个作者合写，一个作者可以写很多书。
+  
+  ```python
+  class Author(models.Model):
+      name=models.CharField(max_length=20)
+  class Publisher(models.Model):
+      name=models.CharField(max_length=20)
+  class Book(models.Model):
+      name=models.CharField(max_length=20)
+       # 在当前表中创建了一个字段 userinfo_id 关联 Userinfo 表,特性：外键、非空
+      pub=models.ForeignKey(Publisher) book_author,其中有id,book_id,author_id
+       # 在当前库中创建了一个第三张表
+      authors=models.ManyToManyField(Author)
+  class Account(models.Model):
+      name = models.CharField(max_length=60, verbose_name='用户名')
+      password = models.CharField(max_length=100, verbose_name='密码')
+      created_at = models.DateField(auto_now=True, verbose_name='创建时间')
+      updated_at = models.DateField(auto_now_add=True, verbose_name='修改时间')
+      # 在当前表中创建了一个字段 userinfo_id 关联 Userinfo 表,特性：外键、非空、唯一
+      userinfo = models.OneToOneField(Userinfo, on_delete=models.CASCADE)
+      def __str__(self):              # __unicode__ on Python 2
+          return "name:%s " % (self.name)
+  ```
+  
+  1.关联尚未定义的Model
+  
+  如果你要与某个尚未定义的 model 建立关联 ，就使用 model 的名称，而不是使用 model 对象本身。
+  
+  例子中，如果Publisher与Author在Book后面定义，需要写成下面的形式：
+  ```python
+  class Book(models.Model):
+      name=models.CharField(max_length=20)
+      pub=models.ForeignKey('Publisher')
+      authors=models.ManyToManyField('Author')
+  ```
+  2.Model关联自身
+  
+  Model可以与自身做多对一关系
+  
+  ```python
+  class People(models.Model):
+      name=models.CharField(max_length=20)
+      leader=models.ForeignKey('self',blank=True,null=True)
+  ```
+      Model也可以与自身做多对多关系
+  
+  ```python
+  class Person(models.Model):
+      friends = models.ManyToManyField("self")
+  ```
+  默认情况下，这种关联关系是对称的，如果Person1是Person2的朋友，那么Person2也是Person1的朋友
+  
+  ```python
+  p1=Person()
+  p1.save()
+  p2=Person()
+  p2.save()
+  p3=Person()
+  p3.save()
+  p1.friends.add(p2,p3)
+  ```
+  上述情况下，要查找p3的朋友，不用p3.person_set.all(),而直接用p3.friends.all()就可以了
+  
+  如果想取消这种对称关系，将symmetrical设为False
+  
+  
+  class Person2(models.Model):
+      friends=(models.ManyToManyField("self",symmetrical=False)
+  这样查询p3的朋友，就需要p3.person_set.all()了
+  
+  3.反向名称related_name
+  
+  反向名称，用来从被关联字段指向关联字段。
+  
+  注意，在你定义 抽象 model (abstract models) 时，你必须显式指定反向名称; 只有在你这么做了之后， 某些特别语法 (some special syntax) 才能正常使用。
+  
+  ```python
+  class Book(models.Model):
+      name=models.CharField(max_length=20)
+      pub=models.ForeignKey(Publisher,related_name='pub')
+      authors=models.ManyToManyField(Author,related_name='author')
+  ```
+  这样用Publisher或者Author反向查询Book时可以用related_name了:publisher1.pub.all()或者author1.author.all()。
+  
+  如果不想设置反向关系，设置related_name为'+'或者以'+'结束。
+  ```python
+  ser = models.ForeignKey(User, related_name='+')
+  ```
+  如果有多个ManyToManyField指向同一个Model,这样反向查询FOO_set的时候就无法弄清是哪个ManyToManyField字段了,可以禁止反向关系:
+  
+  ```python
+  users = models.ManyToManyField(User, related_name='u+')
+  referents = models.ManyToManyField(User, related_name='ref+')
+  ```
+  4.数据库表现 (Database Representation)
+  
+  多对一:Django 使用ForeignKey字段名称＋ "_id" 做为数据库中的列名称。在上面的例子中,BOOK model 对应的数据表中会有 一个 publisher_id 列。
+  
+  你可以通过显式地指定 db_column 来改变该字段的列名称,不过，除非你想自定 义 SQL ，否则没必要更改数据库的列名称。
+  
+  多对多:Django 创建一个中间表来表示ManyToManyField关系。默认情况下，中间表的名称由两个关系表名结合而成。
+  
+  由于某些数据库对表名的长度有限制，所以中间表的名称会自动限制在64个字符以内，并包含一个不重复的哈希字符串。这 
+  
+  意味着，你可能看到类似 book_authors_9cdf4 这样的表名称。你可以使用 db_table 选项手动指定中间表名称。
+  
+  但是，如果你想手动指定中间表，你可以用 through 选项来指定model 使用另外某个 model 来管理多对多关系。而这个 model 就是中间表所对应的 model :
+  
+  ```python
+  class Person(models.Model):
+      name = models.CharField(max_length=128)
+      def __unicode__(self):
+          return self.name
+  class Group(models.Model):
+      name = models.CharField(max_length=128)
+      members = models.ManyToManyField(Person, through='Membership')
+      def __unicode__(self):
+          return self.name
+  class Membership(models.Model):
+      person = models.ForeignKey(Person)
+      group = models.ForeignKey(Group)
+      date_joined = models.DateField()
+      invite_reason = models.CharField(max_length=64)
+  ```
+  这样，就可以记录某个person何时加入group了。
+  
+  要建立Person与Group的关系就不能用add,create,remove了，而是需要通过Membership进行。
+  
+  ```
+  >>> ringo = Person.objects.create(name="Ringo Starr")
+  >>> paul = Person.objects.create(name="Paul McCartney")
+  >>> beatles = Group.objects.create(name="The Beatles")
+  >>> m1 = Membership(person=ringo, group=beatles,
+  ...     date_joined=date(1962, 8, 16),
+  ...     invite_reason= "Needed a new drummer.")
+  >>> m1.save()
+  ```
+  clear()还是可以使用的
+  
+  1
+  >>> beatles.members.clear()
+  当多对多关系关联自身时，中间表的ForeignKey是可以指向同一个Model的，但是它们必须被看做ManyToManyField的两边，而不是对称的，需要设置 symmetrical=False。
+  
+  5.其它参数 (Arguments)
+  
+  5.1 ForeignKey 接受下列这些可选参数，这些参数定义了关系是如何运行的。
+  
+  ForeignKey.limit_choices_to
+  
+  它是一个包含筛选条件和对应值的字典，用来在 Django 管理后台筛选 关联对象。例如，利用 Python 的 datetime 模块，过滤掉不符合筛选条件关联对象：
+  
+  limit_choices_to = {'pub_date__lte': datetime.date.today}
+  
+  只有 pub_date 在当前日期之前的关联对象才允许被选。
+  
+  也可以使用 Q 对象来代替字典，从而实现更复杂的筛选。当limit_choices_to为Q对象时,如果把此外键字段放在ModelAdmin的raw_id_fields时是不可用的。
+  
+  ForeignKey.to_field
+  
+  指定当前关系与被关联对象中的哪个字段关联。默认情况下，to_field 指向被关联对象的主键。
+  
+  ForeignKey.on_delete
+  
+  当一个model对象的ForeignKey关联的对象被删除时，默认情况下此对象也会一起被级联删除的。
+  
+  
+  user = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
+  CASCADE:默认值，model对象会和ForeignKey关联对象一起被删除
+  
+  SET_NULL:将model对象的ForeignKey字段设为null。当然需要将null设为True。
+  
+  SET_DEFAULT:将model对象的ForeignKey字段设为默认值。
+  
+  Protect:删除ForeignKey关联对象时会生成一个ProtectedError，这样ForeignKey关联对象就不会被删除了。
+  
+  SET():将model对象的ForeignKey字段设为传递给SET()的值。
+  
+  ```python
+  def get_sentinel_user():
+      return User.objects.get_or_create(username='deleted')[0]
+   
+  class MyModel(models.Model):
+      user = models.ForeignKey(User, on_delete=models.SET(get_sentinel_user))
+  ```
+  DO_NOTHING:啥也不做。
+  
+  5.2 ManyToManyField 接受下列可选参数，这些参数定义了关系是如何运行的。
+  
+  ManyToManyField.limit_choices_to
+  
+  和 ForeignKey.limit_choices_to 用法一样。
+  
+  limit_choices_to 对于通过 through 参数指定了中介表的 ManyToManyField 不起作用。
+  
+  ManyToManyField.symmetrical
+  
+  只要定义递归的多对多关系时起作用。
+  
+  ManyToManyField.through
+  
+  手动指定中间表
+  
+  ManyToManyField.db_table
+  
+  指定数据库中保存多对多关系数据的表名称。如果没有提供该选项，Django 就会根据两个关系表的名称生成一个新的表名，做为中间表的名称。
+  
+  6.OneToOneField
+  
+  class OneToOneField(othermodel[, parent_link=False, **options])
+  
+  用来定义一对一关系。笼统地讲，它与声明了 unique=True 的 ForeignKey 非常相似，不同的是使用反向关联的时候，得到的不是一个对象列表，而是一个单独的对象。
+  
+  在某个 model 扩展自另一个 model 时，这个字段是非常有用的；例如： 多表继承 (Multi-tableinheritance) 就是通过在子 model 中添加一个指向父 model 的一对一关联而实现的。
+  
+  必须给该字段一个参数：被关联的 model 类。工作方式和 ForeignKey 一样，连递归关联 (recursive) 和 延后关联 (lazy) 都一样。
+  
+  此外，OneToOneField 接受 ForeignKey 可接受的参数，只有一个参数是 OnetoOneField 专有的：OneToOneField.parent_link
+  
+  如果为 True ，并且作用于继承自某个父 model 的子 model 上(这里不能是延后继承，父 model 必须真实存在 )，那么该字段就会变成指向父类实例的引用(或者叫链接)，
+  
+  而不是象其他OneToOneField 那样用于扩展父类并继承父类属性。
+  
+  ```python
+  from django.db import models, transaction, IntegrityError
+   
+  class Place(models.Model):
+      name = models.CharField(max_length=50)
+      address = models.CharField(max_length=80)
+   
+      def __unicode__(self):
+          return u"%s the place" % self.name
+   
+  class Restaurant(models.Model):
+      place = models.OneToOneField(Place, primary_key=True)
+      serves_hot_dogs = models.BooleanField()
+      serves_pizza = models.BooleanField()
+   
+      def __unicode__(self):
+          return u"%s the restaurant" % self.place.name
+   
+  class Waiter(models.Model):
+      restaurant = models.ForeignKey(Restaurant)
+      name = models.CharField(max_length=50)
+   
+      def __unicode__(self):
+          return u"%s the waiter at %s" % (self.name, self.restaurant)
+  ```
+  使用反向关联的时候，得到的不是一个对象列表，而是一个单独的对象：
+  
+  ```
+  >>> p1 = Place(name='Demon Dogs', address='944 W. Fullerton')
+  >>> p1.save()
+  >>> r = Restaurant(place=p1, serves_hot_dogs=True, serves_pizza=False)
+  >>> r.save()
+  >>> p1.restaurant
+  <Restaurant: Demon Dogs the restaurant>
+  >>> Place.objects.get(restaurant__place__name__startswith="Demon")
+  <Place: Demon Dogs the place>
+  >>> Waiter.objects.filter(restaurant__place__name__startswith="Demon")
+  ```
+'''
 tags: []
 isStarred: false
 isTrashed: false
