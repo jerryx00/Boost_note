@@ -1,0 +1,67 @@
+createdAt: "2018-11-06T01:40:49.452Z"
+updatedAt: "2018-11-21T11:44:39.584Z"
+type: "MARKDOWN_NOTE"
+folder: "00f6276eea4c5c719915"
+title: "django数据库操作3"
+content: '''
+  # django数据库操作3
+  
+  数据库表是一个二维表，包含多行多列。把一个表的内容用Python的数据结构表示出来的话，可以用一个list表示多行，list的每一个元素是tuple，表示一行记录，比如，包含id和name的user表：
+  
+      
+      class User(object):
+      def __init__(self, id, name):
+          self.id = id
+          self.name = name
+      [
+        User('1', 'Michael'),
+        User('2', 'Bob'),
+        User('3', 'Adam')
+      ]
+      
+    这就是传说中的ORM技术：Object-Relational Mapping，把关系数据库的表结构映射到对象上。是不是很简单？
+  
+  但是由谁来做这个转换呢？所以ORM框架应运而生。
+  
+  在Python中，最有名的ORM框架是SQLAlchemy。我们来看看SQLAlchemy的用法。
+  
+  首先通过pip安装SQLAlchemy：
+  ```
+   pip install sqlalchemy
+  ```
+  然后，利用上次([使用SQLAlchemy - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014320114981139589ac5f02944601ae22834e9c521415000))我们在MySQL的test数据库中创建的user表，用SQLAlchemy来试试：
+  
+  第一步，导入SQLAlchemy，并初始化DBSession：
+  
+  ```python
+  # 导入:
+  from sqlalchemy import Column, String, create_engine
+  from sqlalchemy.orm import sessionmaker
+  from sqlalchemy.ext.declarative import declarative_base
+  
+  # 创建对象的基类:
+  Base = declarative_base()
+  
+  # 定义User对象:
+  class User(Base):
+      # 表的名字:
+      __tablename__ = 'user'
+  
+      # 表的结构:
+      id = Column(String(20), primary_key=True)
+      name = Column(String(20))
+  
+  # 初始化数据库连接:
+  engine = create_engine('mysql+mysqlconnector://root:password@localhost:3306/test')
+  # 创建DBSession类型:
+  DBSession = sessionmaker(bind=engine)
+  
+  ```
+  
+  后文略，可参考 
+  [使用SQLAlchemy - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014320114981139589ac5f02944601ae22834e9c521415000)
+  以及[【Python】 SQLAlchemy的初步使用 - K.Takanashi - 博客园](https://www.cnblogs.com/franknihao/p/7268752.html)
+'''
+tags: []
+isStarred: false
+isTrashed: false
