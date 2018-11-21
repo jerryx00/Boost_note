@@ -1,0 +1,63 @@
+createdAt: "2018-11-21T14:24:36.513Z"
+updatedAt: "2018-11-21T15:33:43.686Z"
+type: "MARKDOWN_NOTE"
+folder: "00f6276eea4c5c719915"
+title: "django数据库操作4"
+content: '''
+  # django数据库操作4
+  
+  Django QuerySet 多表联查/条件选取/合并
+  
+  * 1.多表联查
+  ```
+  class A(models.Model):
+    aname = models.CharField()
+  
+  class B(models.Model):
+    bname = models.ForeignKey(A)
+  ```
+  ```
+    B.objects.filter(bname__aname__contains='searchtitle') # 是两个 '_' 。
+  ```
+  
+  * 2.条件选取QuerySet
+  
+  filter 表示 =
+  exclude 表示 !=
+  querySet.distinct() 去重复
+  __exact 精确等于 like 'aaa'
+  __iexact 精确等于 忽略大小写 ilike 'aaa'
+  __contains 包含 like '%aaa%'
+  __icontains 包含 忽略大小写 ilike '%aaa%'，但是对于sqlite来说，contains的作用效果等同于icontains。
+  __gt 大于
+  __gte 大于等于
+  __lt 小于
+  __lte 小于等于
+  __in 存在于一个list范围内
+  __startswith 以...开头
+  __istartswith 以...开头 忽略大小写
+  __endswith 以...结尾
+  __iendswith 以...结尾，忽略大小写
+  __range 在...范围内
+  __year 日期字段的年份
+  __month 日期字段的月份
+  __day 日期字段的日
+  __isnull=True/False
+  * 3.在Django 总用 chain 合并多个QuerySet.
+  
+  1)  合并同一个model的多个QuerySet 的话，是可以采用这种方式的.
+  QuerySet = QuerySet1 | QuerySet2
+  
+  2) 用chain 来实现，即使是不同的MODEL中查询出来的数据，都可以合并到一个 list 中去.
+  QuerySet = chain(QuerySet1， QuerySet2)
+  --------------------- 
+  
+  
+  其它很不错的学习资料参考 
+  [实例详解Django的 select_related 和 prefetch_related 函数对 QuerySet 查询的优化（一） - 文章 - 伯乐在线](http://blog.jobbole.com/74881/)
+  [理解dajngo ORM查询中select_related的作用 - 李谦的博客 - CSDN博客](https://blog.csdn.net/weixin_39198406/article/details/78845122)
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false
