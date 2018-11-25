@@ -1,10 +1,10 @@
 createdAt: "2018-10-17T23:44:30.487Z"
-updatedAt: "2018-11-12T11:51:52.460Z"
+updatedAt: "2018-11-22T01:04:22.021Z"
 type: "MARKDOWN_NOTE"
 folder: "00f6276eea4c5c719915"
-title: "django 数据库操作"
+title: "django数据库操作1"
 content: '''
-  # django 数据库操作
+  # django数据库操作1
   ### 1.数据库操作
   ```python
   from django.db import models

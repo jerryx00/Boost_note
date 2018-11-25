@@ -1,5 +1,5 @@
 createdAt: "2018-11-21T14:24:36.513Z"
-updatedAt: "2018-11-21T15:33:43.686Z"
+updatedAt: "2018-11-22T01:01:12.970Z"
 type: "MARKDOWN_NOTE"
 folder: "00f6276eea4c5c719915"
 title: "django数据库操作4"
@@ -50,6 +50,21 @@ content: '''
   
   2) 用chain 来实现，即使是不同的MODEL中查询出来的数据，都可以合并到一个 list 中去.
   QuerySet = chain(QuerySet1， QuerySet2)
+  
+  3) 打印查询sql
+  ```python
+  from django.db import connection
+  print MyModel.objects.filter(name="my name").query
+  ```
+  或
+  ```python
+  print(connection.queries)
+  ```
+  4) 打印查询或插入/更新/删除sql
+  ```python
+  from django.db import connection
+  print(connection.queries)
+  ```
   --------------------- 
   
   
