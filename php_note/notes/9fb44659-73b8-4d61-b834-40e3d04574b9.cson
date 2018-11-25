@@ -1,5 +1,5 @@
 createdAt: "2018-11-06T01:24:00.212Z"
-updatedAt: "2018-11-11T13:53:12.784Z"
+updatedAt: "2018-11-25T15:14:28.531Z"
 type: "MARKDOWN_NOTE"
 folder: "d453dbdbdb5b2a23e757"
 title: "PHP"
@@ -59,6 +59,19 @@ content: '''
   你还可以用jenkins把上述工具以plugins形式整合起来，做持续集成：http://jenkins-php.org/
   
   你还可以用xinc+phing跟上述工具集成起来做持续集成后的自动化打包发布：http://code.google.com/p/xinc/
+  
+  
+  ace admin框架及字体
+  
+  http://fontawesome.io
+  http://fontawesome.io/icons/
+  
+  框架
+  blud-admin
+  
+  框架
+  thinkphp-bjyadmin
+  集成了许多插件功能（短信等）
   
 '''
 tags: []

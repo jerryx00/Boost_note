@@ -1,0 +1,33 @@
+createdAt: "2018-11-25T15:04:07.082Z"
+updatedAt: "2018-11-25T15:04:14.181Z"
+type: "MARKDOWN_NOTE"
+folder: "d453dbdbdb5b2a23e757"
+title: "PHP redis扩展安装"
+content: '''
+  # PHP redis扩展安装
+  https://pecl.php.net/package/redis
+  
+  windows redis下载
+  https://www.cnblogs.com/M-LittleBird/p/5902850.html
+  
+  一、下载windows版本的Redis
+  去官网找了很久，发现原来在官网上可以下载的windows版本的，现在官网以及没有下载地址，只能在github上下载，官网只提供linux版本的下载
+  官网下载地址：http://redis.io/download
+  github下载地址：https://github.com/MSOpenTech/redis/tags 
+  
+  
+  https://github.com/coolseven/notes/tree/master/thinkphp-queue
+  
+  
+  
+  https://packagist.org/packages/topthink/think-queue
+  https://github.com/coolseven/notes/blob/master/thinkphp-queue/README.md
+  
+  
+  
+  
+  composer config -g -- disable-tls false
+'''
+tags: []
+isStarred: false
+isTrashed: false
