@@ -1,5 +1,5 @@
 createdAt: "2018-10-28T14:30:59.915Z"
-updatedAt: "2018-10-28T15:16:27.801Z"
+updatedAt: "2018-11-25T14:31:42.913Z"
 type: "MARKDOWN_NOTE"
 folder: "00f6276eea4c5c719915"
 title: "Django 开发的小经验"
@@ -78,6 +78,32 @@ content: '''
   当需要创建这个虚拟环境的完全副本，可以创建一个新的虚拟环境，并在其上运行以下命令：
   (venv) $ pip install -r requirements.txt
   pip install -r requirements.txt
+  
+  
+  Django开发环境与生产环境的设置
+  
+  1) settings
+  删掉原settings.py文件(或者修改为settings_tmp.py)，在其目录下创建settings文件夹
+  在settings文件夹创建base.py、dev.py、pro.py、uat.py
+  base中存放公共和内容，其它文件存放个性内容.
+  2) 数据库也可能不同，因此也从base中移到dev等中
+  ```python
+  DATABASES = {
+      'default': {
+          'ENGINE': 'django.db.backends.sqlite3',
+          'NAME': os.path.join(BASE_DIR, '../db.sqlite3'),
+      }
+  }
+  ```
+  3) 最后，注意在.gitignore中加上base.py、dev.py、pro.py、uat.py
+  4) 在开发环境下，使用
+  ```
+  python manage.py runserver --settings=myblog.settings.dev
+  ```
+  
+  启动服务器 
+  
+  
 '''
 tags: []
 isStarred: false

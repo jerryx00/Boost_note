@@ -1,0 +1,77 @@
+createdAt: "2018-11-25T01:19:49.860Z"
+updatedAt: "2018-11-25T14:21:23.522Z"
+type: "MARKDOWN_NOTE"
+folder: "00f6276eea4c5c719915"
+title: "Django开发笔记"
+content: '''
+  # Django开发笔记
+  1. ajax返回
+  
+  ```python
+  author_obj = news_db.Author.objects.get(id=author_id)  
+  data = {'code':0,"name":author_obj.name, "email":author_obj.email, "mobile":author_obj.mobile,"author_id":author_obj.id}  
+  info_json = json.dumps(data)  
+  return HttpResponse(info_json, content_type="application/json")
+  ```
+  
+  html界面如下
+  ```javascript
+  $('td [name="edit-author"]').click(function(){  
+      var author_id = $(this).attr("author_id");  
+          $.ajax({  
+              url: "/news/author/",  
+              type: "PUT",  
+              data: JSON.stringify({'author_id':author_id}),  
+              success: function(data) {  
+                          $("#edit-name").val(data.name);  
+                          $("#edit-mobile").val(data.mobile);  
+                          $("#edit-email").val(data.email);  
+                          $("#sub-edit-author").attr('author_id', data.author_id);  
+                          $("#edit-authorModal").modal('show');  
+                      }   
+    
+      });  
+  });
+  ```
+  2. ajax返回2
+  ```python
+  author_obj = news_db.Author.objects.get(id=author_id)  
+   data = {'code':0,"name":author_obj.name, "email":author_obj.email,  
+                                  "mobile":author_obj.mobile,"author_id":author_obj.id}  
+  info_json = json.dumps(data)  
+  return HttpResponse(info_json,)
+  ```
+  html界面如下
+  ```javascript
+  $('td a[name="edit-book"\\]').click(function(){  
+      var book_id = $(this).attr("book_id");  
+          $.ajax({  
+              url: "/news/book/",  
+              type: "PUT",  
+              data: JSON.stringify({'book_id':book_id}),  
+              success: function(data) {  
+                          var info = eval('(' \\+ data + ')');  
+                          $("#edit-name").val(info.name);  
+                          $("#edit-title").val(info.title);  
+                          $("#edit-pub").val(info.pub);  
+                          $("#sub-edit-book").attr('book_id', info.book_id);  
+                          $("#edit-bookModal").modal('show');  
+                      }  
+    
+    
+      });  
+  });
+  ```
+  
+  以上区别主要如下
+  1) pythony中，没有指明content_type="application/json"返回
+  2) html中，增加var info = eval('(' + data + ')');  
+  总结：
+  如果返回的是字符串，就使用eval("("+data+")")(eval会带来很多问题，不建议使用，如果想实现转化用JSON.parse更好)，
+  如果后台返回的是json对象，什么操作都不需要，直接使用data即可
+  3. ajax返回并刷新
+  待补充
+'''
+tags: []
+isStarred: false
+isTrashed: false

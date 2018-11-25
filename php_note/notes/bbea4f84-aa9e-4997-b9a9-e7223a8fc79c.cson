@@ -1,0 +1,31 @@
+createdAt: "2018-11-25T01:19:50.092Z"
+updatedAt: "2018-11-25T01:26:31.789Z"
+type: "MARKDOWN_NOTE"
+folder: "d453dbdbdb5b2a23e757"
+title: "Thinkphp调试"
+content: '''
+  # Thinkphp调试
+  
+  整体来说,php的调试设置比较复杂。
+  1. xdebug
+  [XDEBUG 从入门到精通 - Grace development - SegmentFault 思否](https://segmentfault.com/a/1190000016325041)
+  
+  2. NuSphere debug（php5.5及以下）本地调试
+     php5.5版本可以调试
+  3. NuSphere debug（php7）本地调试
+  php7的调试？待探索
+  
+  4. NuSphere debug（远程调试）
+  
+  5. NuSphere debug（docker调试）
+  
+  6. phpstorm 本地调试
+  
+  7. phpstorm 远程调试
+  
+  8. phpstorm docker调试
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

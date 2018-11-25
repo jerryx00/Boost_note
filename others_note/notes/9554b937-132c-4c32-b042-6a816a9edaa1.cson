@@ -1,0 +1,16 @@
+createdAt: "2018-11-25T14:02:37.785Z"
+updatedAt: "2018-11-25T14:05:56.822Z"
+type: "MARKDOWN_NOTE"
+folder: "d2d6983005c94aa457ea"
+title: "一些知识了解"
+content: '''
+  # 一些知识了解
+  1. Liquibase
+    Liquibase 是一个用于跟踪、管理和应用数据库变化开源的数据库重构工具。它将所有数据库的变化（包括结构和数据）都保存在XML文件中，便于版本控制。
+  2. Jenkins 
+  Jenkins是一个开源软件项目，是基于Java开发的一种持续集成工具，用于监控持续重复的工作，旨在提供一个开放易用的软件平台，使软件的持续集成变成可能
+  3. 
+'''
+tags: []
+isStarred: false
+isTrashed: false
