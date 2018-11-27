@@ -1,13 +1,38 @@
 createdAt: "2018-10-30T01:18:32.076Z"
-updatedAt: "2018-10-30T03:13:22.803Z"
+updatedAt: "2018-11-27T08:54:42.653Z"
 type: "MARKDOWN_NOTE"
 folder: "725cec0505fdc407bd6e"
 title: "tensorflow"
 content: '''
-  #tensorflow
+  # tensorflow
   关于 TensorFlow
   TensorFlow™ 是一个采用数据流图（data flow graphs），用于数值计算的开源软件库。节点（Nodes）在图中表示数学操作，图中的线（edges）则表示在节点间相互联系的多维数据数组，即张量（tensor）。它灵活的架构让你可以在多种平台上展开计算，例如台式计算机中的一个或多个CPU（或GPU），服务器，移动设备等等。TensorFlow 最初由Google大脑小组（隶属于Google机器智能研究机构）的研究员和工程师们开发出来，用于机器学习和深度神经网络方面的研究，但这个系统的通用性使其也可广泛用于其他计算领域。
   可学习网址 :[TensorFlow中文社区-首页](http://www.tensorfly.cn)
+  
+  tensorflow搭建
+  1.安装Anaconda并将安装后的Scripts目录加到环境变量中。
+  D:\\OftenSoft\\Anaconda3\\Scripts
+  
+  进入到windows中的命令模式：
+  
+  （1）检测anaconda环境是否安装成功：conda --version
+  （2）检测目前安装了哪些环境变量：conda info --envs
+  （3）对于Anaconda中安装一个内置的python版本解析器(其实就是python的版本)
+   查看当前有哪些可以使用的python版本：conda search  --full -name python
+  
+          安装python版本（我这里是安装的3.5的版本，这个根据需求来吧）：conda create --name tensorflow python=3.5
+  
+  （4）激活tensflow的环境：activate tensorflow（注意：这个是在后序安装成功之后才能进行的，否则会提示错误）
+  （5）检测tensflow的环境添加到了Anaconda里面：conda info --envs（注意：基于后序安装成功之后才进行的，否则会提示错误）
+  （6）检测当前环境中的python的版本：python --version
+  （7）退出tensorflow的环境：deactivate
+  （8）切换到tensorflow的环境：activate tensorflow  
+  
+  --------------------- 
+  作者：Cs_hnu_scw 
+  来源：CSDN 
+  原文：https://blog.csdn.net/cs_hnu_scw/article/details/79695347 
+  版权声明：本文为博主原创文章，转载请附上博文链接！
   
   ## MNIST机器学习入门
   
