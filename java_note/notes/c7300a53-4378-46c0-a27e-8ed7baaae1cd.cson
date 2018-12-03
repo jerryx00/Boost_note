@@ -1,0 +1,94 @@
+createdAt: "2018-12-02T07:10:53.652Z"
+updatedAt: "2018-12-02T12:33:34.420Z"
+type: "MARKDOWN_NOTE"
+folder: "0f86a1442495d76efd5c"
+title: "开发入门"
+content: '''
+  # 开发入门
+  1) java文件
+   
+  2) html文件
+  bootdo\\src\\main\\resources\\templates\\xugp\\xFee
+  3) js文件
+  bootdo\\src\\main\\resources\\static\\js\\appjs\\xugp\\xFee
+  对应add.js/edit.js/xFee.js(例名)
+  
+  枚举 下拉框：
+  新增界面
+  ```html
+                          <div class="form-group">
+                              <label class="col-sm-3 control-label">类型：</label>
+                              <div class="col-sm-8">
+                                  <select data-placeholder="--选择类别--" name="type" id="type"
+                                          class="form-control chosen-select" tabindex="2" required>
+                                      <option value="">--选择类别--</option>
+                                  </select>
+                              </div>
+                          </div>
+  ```
+  add.js
+  ```js
+  function loadType(){
+  	var html = "";
+  	$.ajax({
+  		url : '/common/dict/list/oa_notify_type',
+  		success : function(data) {
+  			//加载数据
+  			for (var i = 0; i < data.length; i++) {
+  				html += '<option value="' + data[i].value + '">' + data[i].name + '</option>'
+  			}
+  			$(".chosen-select").append(html);
+  			$(".chosen-select").chosen({
+  				maxHeight : 200
+  			});
+  			//点击事件
+  			$('.chosen-select').on('change', function(e, params) {
+  				console.log(params.selected);
+  				var opt = {
+  					query : {
+  						type : params.selected,
+  					}
+  				}
+  				$('#exampleTable').bootstrapTable('refresh', opt);
+  			});
+  		}
+  	});
+  }
+  ```
+  修改界面
+  ```html
+                          <div class="form-group">
+                              <label class="col-sm-3 control-label">类型：</label>
+                              <div class="col-sm-8">
+                                  <select data-placeholder="--选择类别--" name="type" id="type"
+                                          class="form-control chosen-select" tabindex="2" required>
+                                      <option value="">--选择类别--</option>
+                                  </select>
+                              </div>
+                          </div>
+  ```
+  状态框
+  ```html
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">状态：</label>
+                            <div class="switch  col-sm-1">
+                                <div class="onoffswitch">
+                                    <input id="status" name="status" checked="" type="checkbox"
+                                           value="1" class="onoffswitch-checkbox"> <label
+                                        class="onoffswitch-label" for="status"> <span
+                                        class="onoffswitch-inner"></span> <span
+                                        class="onoffswitch-switch"></span>
+                                </label>
+                                </div>
+                            </div>
+                        </div>
+  ```
+  
+  
+  不足之处：
+  1) 没有集成redis
+  2) 
+'''
+tags: []
+isStarred: false
+isTrashed: false
