@@ -1,9 +1,65 @@
 createdAt: "2018-11-06T01:35:41.578Z"
-updatedAt: "2018-11-06T01:35:41.578Z"
+updatedAt: "2018-12-08T00:33:33.870Z"
 type: "MARKDOWN_NOTE"
 folder: "29625d2c21388c63c743"
-title: ""
-content: ""
-tags: []
+title: "RabbitMQ安装"
+content: '''
+  # RabbitMQ安装
+  软件准备
+  1. erlang
+  [Erlang Programming Language](https://www.erlang.org/downloads)
+  分别是32位和64位，根据自己的选择来下载
+  安装Erlang，默认选项就行，一直点下去
+  路径不要带空格中文，如D:\\OftenSoft\\RabbitMQ\\
+  
+  环境变更 设置
+  ERLAGN_HOME  D:\\OftenSoft\\RabbitMQ\\erl10.1
+  PATH中加 %ERLAGN_HOME%\\bin
+  2. 下载RabbitMQ，打开网址: 
+  [Release RabbitMQ 3.7.9 · rabbitmq/rabbitmq-server · GitHub](https://github.com/rabbitmq/rabbitmq-server/releases/tag/v3.7.9)
+  
+  选择下载rabbitmq-server-windows-3.7.9.zip
+  然后解压到D:\\OftenSoft\\RabbitMQ\\目录下
+  在cmd命令行下，运行
+  ```
+  D:\\>D:\\OftenSoft\\RabbitMQ\\rabbitmq_server-3.7.9\\sbin\\rabbitmq-plugins.bat enable rabbitmq_management 
+  ```
+  显示如下则表示成功
+  ```
+  Enabling plugins on node rabbit@USER-20180615MJ:
+  rabbitmq_management
+  The following plugins have been configured:
+    rabbitmq_management
+    rabbitmq_management_agent
+    rabbitmq_web_dispatch
+  Applying plugin configuration to rabbit@USER-20180615MJ...
+  The following plugins have been enabled:
+    rabbitmq_management
+    rabbitmq_management_agent
+    rabbitmq_web_dispatch
+  
+  set 3 plugins.
+  Offline change; changes will take effect at broker restart.
+  
+  C:\\Users\\Administrator>
+  ```
+  启动RabbitMQ
+  ```
+  cd D:\\OftenSoft\\RabbitMQ\\rabbitmq_server-3.7.9\\sbin
+  rabbitmq-server.bat
+  ```
+  默认帐号访问Rabbit Mq的管理控制台。
+  
+  网址: http://localhost:15672，用户名：guest，密码：guest
+  
+  如果能登录，则表示RQ安装成功
+  
+  
+  
+  
+'''
+tags: [
+  "RabbitMQ_安装"
+]
 isStarred: false
 isTrashed: false

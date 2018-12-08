@@ -1,0 +1,63 @@
+createdAt: "2018-12-08T07:14:57.407Z"
+updatedAt: "2018-12-08T07:21:13.644Z"
+type: "MARKDOWN_NOTE"
+folder: "d2d6983005c94aa457ea"
+title: "IDEA 使用说明"
+content: '''
+  # IDEA 使用说明 
+  1. 下载lombok
+      项目pom.xml中增加
+      <properties>
+      <!--Lombok-->
+          <lombok.version>1.16.20</lombok.version>
+          
+      <!--Lombok-->
+          <dependency>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>${lombok.version}</version>
+          </dependency>      
+  2. 开启Run DashBoard配置
+  找到.idea文件下的workspace.xml，并找到RunDashboard
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>  
+    加入如下配置：
+  <option name="configurationTypes">
+    <set>
+      <option value="SpringBootApplicationConfigurationType" />
+    </set>
+  </option>
+  这样RunDashboard自动就弹出来了
+  最终配置如下：
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false
