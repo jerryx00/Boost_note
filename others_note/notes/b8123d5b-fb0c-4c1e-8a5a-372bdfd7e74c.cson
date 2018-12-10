@@ -1,5 +1,5 @@
 createdAt: "2018-10-17T00:02:40.535Z"
-updatedAt: "2018-12-07T01:06:57.914Z"
+updatedAt: "2018-10-17T00:48:06.620Z"
 type: "MARKDOWN_NOTE"
 folder: "d2d6983005c94aa457ea"
 title: "git生成ssh key和多账号支持"
@@ -111,23 +111,6 @@ content: '''
   参考：https://my.oschina.net/csensix/blog/184434
   
            https://www.jianshu.com/p/89cb26e5c3e8
-           
-           
-  * 免输入密码提交
-      在     C:\\Users\\Administrator，新建两个文件
-      .git-credentials内容如下
-      https://xiang37288%40163.com:密码@github.com
-      .gitconfig内容如下 
-  [user]
-  	name = jerryxu
-  	email = xiang37288@163.com
-  [gui]
-  [credential]
-  	helper = store
-  [gui]
-  	encoding = utf-8
-  
-  
 '''
 tags: []
 isStarred: false

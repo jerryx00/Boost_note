@@ -1,42 +1,4 @@
 createdAt: "2018-11-06T01:35:41.578Z"
-<<<<<<< HEAD
-updatedAt: "2018-12-05T09:40:10.219Z"
-type: "MARKDOWN_NOTE"
-folder: "29625d2c21388c63c743"
-title: "资源介绍"
-content: '''
-  # 资源介绍
-  1、 spaascloud-master
-  项目主页
-  
-  https://github.com/paascloud/paascloud-master
-  
-  [GitHub - jerryxu0909/paascloud-master: spring cloud + vue + oAuth2.0全家桶实战，前后端分离模拟商城，完整的购物流程、后端运营平台，可以实现快速搭建企业级微服务项目。支持微信登录等三方登录。](https://github.com/jerryxu0909/paascloud-master)
-  
-  传送门
-  博客入口： http://blog.paascloud.net
-  后端入口： http://admin.paascloud.net (支持微信登录体验)
-  模拟商城: http://mall.paascloud.net (支持微信登录体验)
-  文档手册: http://document.paascloud.net
-  github: https://github.com/paascloud
-  操作手册: http://blog.paascloud.net/2018/06/10/paascloud/doc/
-  
-  配套项目
-  后端项目：https://github.com/paascloud/paascloud-master 
-           https://gitee.com/paascloud/paascloud-master
-  登录入口：https://github.com/paascloud/paascloud-login-web
-           https://gitee.com/paascloud/paascloud-login-web
-  后端入口：https://github.com/paascloud/paascloud-admin-web
-           https://gitee.com/paascloud/paascloud-admin-web
-  前端入口：https://github.com/paascloud/paascloud-mall-web
-           https://gitee.com/paascloud/paascloud-mall-web
-  
-  
-  开发环境搭建，参见如下链接的“开发环境”
-  [PaasCloud](http://blog.paascloud.net/2018/03/26/springcloud/nexus/maven-nexus-use/)
-'''
-tags: []
-=======
 updatedAt: "2018-12-08T00:33:33.870Z"
 type: "MARKDOWN_NOTE"
 folder: "29625d2c21388c63c743"
@@ -99,6 +61,5 @@ content: '''
 tags: [
   "RabbitMQ_安装"
 ]
->>>>>>> 10a9e04a1506948947d1ded9bdad530310105ac2
 isStarred: false
 isTrashed: false
