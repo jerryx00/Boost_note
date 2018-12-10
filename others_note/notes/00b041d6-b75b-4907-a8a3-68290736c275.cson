@@ -1,5 +1,5 @@
 createdAt: "2018-10-16T01:11:17.626Z"
-updatedAt: "2018-11-25T15:01:31.753Z"
+updatedAt: "2018-12-08T13:19:31.808Z"
 type: "MARKDOWN_NOTE"
 folder: "d2d6983005c94aa457ea"
 title: "GIT常用命令"
@@ -40,6 +40,24 @@ content: '''
   
   clone到指定目录
   git clone https://github.com/xxx/spring-boot2-learning.git /e/GIT_JAVA/spring_boot
+  
+  
+  删除已经提交的目录
+  git rm -r .idea #本地也会删除的，注意
+  git commit -m "init commit"
+  git push -u origin master
+  
+  查看分支情况 
+  git branch --all
+  获取开发分支
+  git branch dev
+  查看当前分支是否在dev分支
+  git status 
+  切换到开发分支
+  git checkout dev
+  在开发分支提交 
+  git push origin dev:dev
+  
   
 '''
 tags: []
