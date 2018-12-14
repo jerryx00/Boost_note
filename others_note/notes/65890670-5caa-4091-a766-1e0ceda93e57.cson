@@ -1,0 +1,37 @@
+createdAt: "2018-12-11T08:41:50.415Z"
+updatedAt: "2018-12-11T10:36:38.896Z"
+type: "MARKDOWN_NOTE"
+folder: "d2d6983005c94aa457ea"
+title: "理解maven命令package、install、deploy的联系与区别"
+content: '''
+  # 理解maven命令package、install、deploy的联系与区别
+  =====================================
+  三者的区别在于包函的maven生命的阶段和执行目标(goal)不同。在我的上一篇文章https://blog.csdn.net/zhaojianting/article/details/80321488　中介绍了maven的生命周期和各种插件，不明白的请参考此博文。maven生命周期（lifecycle）由各个阶段组成，每个阶段由maven的插件plugin来执行完成。生命周期（lifecycle）主要包括clean、resources、complie、install、pacakge、testResources、testCompile、deploy等，其中带test开头的都是用业编译测试代码或运行单元测试用例的。
+  
+  　　仔细查看上面的输出结果截图，可以发现，
+  
+  mvn clean package依次执行了clean、resources、compile、testResources、testCompile、test、jar(打包)等７个阶段。
+  mvn clean install依次执行了clean、resources、compile、testResources、testCompile、test、jar(打包)、install等8个阶段。
+  mvn clean deploy依次执行了clean、resources、compile、testResources、testCompile、test、jar(打包)、install、deploy等９个阶段。
+  
+  　　 由上面的分析可知主要区别如下，
+  
+  * mvn clean package
+  命令完成了项目编译、单元测试、打包功能，但没有把打好的可执行jar包（war包或其它形式的包）布署到本地maven仓库和远程maven私服仓库
+  * mvn clean install
+  命令完成了项目编译、单元测试、打包功能，同时把打好的可执行jar包（war包或其它形式的包）布署到本地maven仓库，但没有布署到远程maven私服仓库
+  如果打包有错误，可以加如下参数
+  mvn install -Dgpg.skip
+  mvn install -Dmaven.test.skip=true
+  mvn install -Dmaven.test.skip -Dgpg.skip
+  * mvn clean deploy
+  命令完成了项目编译、单元测试、打包功能，同时把打好的可执行jar包（war包或其它形式的包）布署到本地maven仓库和远程maven私服仓库　
+  
+  【特别说明】mvn clean 表示能够保证上一次构建的输出不会影响到本次构建
+  
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false
