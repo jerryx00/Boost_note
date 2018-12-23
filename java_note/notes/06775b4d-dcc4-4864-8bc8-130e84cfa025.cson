@@ -1,0 +1,73 @@
+createdAt: "2018-12-23T14:39:41.579Z"
+updatedAt: "2018-12-23T15:01:09.887Z"
+type: "MARKDOWN_NOTE"
+folder: "366023e13d79de1a0218"
+title: "注册新应用实例"
+content: '''
+  # 注册新应用实例
+  
+  1. [Eureka Server REST API - 大漠知秋的小秘密 - CSDN博客](https://blog.csdn.net/wo18237095579/article/details/83271829#_36)
+  包含xml和json格式 示例
+  
+  2. [求助啊，用eureka restAPI注册服务的时候一直给我报400cannot parse request body-CSDN论坛](https://bbs.csdn.net/topics/392299198)
+  
+  3. [Eureka Rest接口文档 - sharedCode源码交流 - CSDN博客](https://blog.csdn.net/u012394095/article/details/81027286)
+  
+  4. rest注册服务源码（xml格式）
+  [Eureka-webservice注册及续约 - ahutdbx的博客 - CSDN博客](https://blog.csdn.net/ahutdbx/article/details/83149078)
+  
+  
+  5. **Operation**
+  
+  **HTTPaction**
+  
+  **Description**
+  
+  Register new application instance
+  
+  POST/eureka/v2/apps/**appID**
+  
+  Input:JSON/XMLpayloadHTTPCode: 204 on success
+  
+  {"instance":{
+      "instanceId": "i-00000000",
+      "app": "APPLICATION0",
+      "appGroupName": "APPLICATION0GROUP",
+      "ipAddr": "20.0.0.0",
+      "sid": "na",
+      "homePageUrl": "http://instance0.application0.com:8080/homepage",
+      "statusPageUrl": "http://instance0.application0.com:8080/status",
+      "healthCheckUrl": "http://instance0.application0.com:8080/healthcheck",
+      "secureHealthCheckUrl": "https://instance0.application0.com:8081/healthcheck",
+      "vipAddress": "application0:8080",
+      "secureVipAddress": "application0:8081",
+      "countryId": 1,
+      "dataCenterInfo": {
+          "@class": "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo",
+          "name": "MyOwn"
+      },
+      "hostName": "instance0.application0.com",
+      "status": "UP",
+      "leaseInfo": {
+          "renewalIntervalInSecs": 300,
+          "durationInSecs": 60,
+          "registrationTimestamp": 1534842304860,
+          "lastRenewalTimestamp": 1534842304865,
+          "evictionTimestamp": 1534842364875,
+          "serviceUpTimestamp": 1534842304855
+      },
+      "isCoordinatingDiscoveryServer": true,
+      "metadata": {
+          "appKey0": "0"
+      },
+      "lastUpdatedTimestamp": 1534841554081,
+      "lastDirtyTimestamp": 1534841554081,
+      "actionType": "ADDED",
+      "asgName": "application0ASG",
+      "overriddenStatus": "UNKNOWN"
+  }}
+  注意还有续心跳接口
+'''
+tags: []
+isStarred: false
+isTrashed: false

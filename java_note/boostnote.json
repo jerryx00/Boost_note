@@ -9,6 +9,16 @@
       "key": "0f86a1442495d76efd5c",
       "color": "#E10051",
       "name": "bootdo"
+    },
+    {
+      "key": "366023e13d79de1a0218",
+      "color": "#FF8E00",
+      "name": "springcloud"
+    },
+    {
+      "key": "c8a3e8269369b691e8c3",
+      "color": "#FF8E00",
+      "name": "springboot"
     }
   ],
   "version": "1.0"

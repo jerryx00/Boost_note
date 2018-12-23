@@ -1,96 +1,45 @@
 createdAt: "2018-12-10T00:56:36.355Z"
-updatedAt: "2018-12-10T00:56:59.653Z"
+updatedAt: "2018-12-13T15:06:35.682Z"
 type: "MARKDOWN_NOTE"
 folder: "29625d2c21388c63c743"
-title: "RabbitMQ安装"
+title: "Springboot之接收json字符串"
 content: '''
-  # RabbitMQ安装
-  
-  \\# RabbitMQ安装
-  
-  软件准备
-  
-  1\\. erlang
-  
-  \\[Erlang Programming Language\\](https://www.erlang.org/downloads)
-  
-  分别是32位和64位，根据自己的选择来下载
-  
-  安装Erlang，默认选项就行，一直点下去
-  
-  路径不要带空格中文，如D:\\\\\\OftenSoft\\\\\\RabbitMQ\\\\\\
-  
-  环境变更 设置
-  
-  ERLAGN_HOME D:\\\\\\OftenSoft\\\\\\RabbitMQ\\\\\\erl10.1
-  
-  PATH中加 %ERLAGN_HOME%\\\\\\bin
-  
-  2\\. 下载RabbitMQ，打开网址:
-  
-  \\[Release RabbitMQ 3.7.9 · rabbitmq/rabbitmq-server · GitHub\\](https://github.com/rabbitmq/rabbitmq-server/releases/tag/v3.7.9)
-  
-  选择下载rabbitmq-server-windows-3.7.9.zip
-  
-  然后解压到D:\\\\\\OftenSoft\\\\\\RabbitMQ\\\\\\目录下
-  
-  在cmd命令行下，运行
-  
+  # Springboot之接收json字符串
+  配置fastjson
+  添加fastjson的依赖到pom.xml中
+  ```
+  <dependency>
+     <groupId>com.alibaba</groupId>
+     <artifactId>fastjson</artifactId>
+     <version>${fastjson.version}</version>
+  </dependency>
   ```
   
-  D:\\\\\\>D:\\\\\\OftenSoft\\\\\\RabbitMQ\\\\\\rabbitmq_server-3.7.9\\\\\\sbin\\\\\\rabbitmq-plugins.bat enable rabbitmq_management
+  通过`@RequestBody`接收json
+  直接通过`@RequestBody`的方式，直接将json的数据注入到了JSONObject里面了
+  ```java
+  /**
+   * 创建日期:2018年4月6日<br/>
+   * 代码创建:xx<br/>
+   * 功能描述:通过request的方式来获取到json数据<br/>
+   * @param jsonobject 这个是阿里的 fastjson对象
+   * @return
+   */
+  @ResponseBody
+  @RequestMapping(value = "/json/data", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+  public String getByJSON(@RequestBody JSONObject jsonParam) {
+      // 直接将json信息打印出来
+      System.out.println(jsonParam.toJSONString());
   
+      // 将获取的json数据封装一层，然后在给返回
+      JSONObject result = new JSONObject();
+      result.put("msg", "ok");
+      result.put("method", "json");
+      result.put("data", jsonParam);
+  
+      return result.toJSONString();
+  }
   ```
-  
-  显示如下则表示成功
-  
-  ```
-  
-  Enabling plugins on node rabbit@USER-20180615MJ:
-  
-  rabbitmq_management
-  
-  The following plugins have been configured:
-  
-  rabbitmq_management
-  
-  rabbitmq\\_management\\_agent
-  
-  rabbitmq\\_web\\_dispatch
-  
-  Applying plugin configuration to rabbit@USER-20180615MJ...
-  
-  The following plugins have been enabled:
-  
-  rabbitmq_management
-  
-  rabbitmq\\_management\\_agent
-  
-  rabbitmq\\_web\\_dispatch
-  
-  set 3 plugins.
-  
-  Offline change; changes will take effect at broker restart.
-  
-  C:\\\\\\Users\\\\\\Administrator>
-  
-  ```
-  
-  启动RabbitMQ
-  
-  ```
-  
-  cd D:\\\\\\OftenSoft\\\\\\RabbitMQ\\\\\\rabbitmq_server-3.7.9\\\\\\sbin
-  
-  rabbitmq-server.bat
-  
-  ```
-  
-  默认帐号访问Rabbit Mq的管理控制台。
-  
-  网址: http://localhost:15672，用户名：guest，密码：guest
-  
-  如果能登录，则表示RQ安装成功
 '''
 tags: []
 isStarred: false
