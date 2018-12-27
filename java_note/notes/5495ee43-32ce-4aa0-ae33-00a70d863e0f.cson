@@ -1,9 +1,14 @@
 createdAt: "2018-12-23T14:39:41.326Z"
-updatedAt: "2018-12-23T14:39:41.326Z"
+updatedAt: "2018-12-27T21:57:28.015Z"
 type: "MARKDOWN_NOTE"
 folder: "366023e13d79de1a0218"
-title: ""
-content: ""
+title: "springcloud-feign使用"
+content: '''
+  # springcloud-feign使用
+  参考SpringCloud-Feign
+  
+  1. 实现了完整的服务调用 
+'''
 tags: []
 isStarred: false
 isTrashed: false
